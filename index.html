@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PGA TOUR × Amplitude — Partnership Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
       --bg: #0b0e1a;
@@ -12,7 +13,6 @@
       --border: #242b45;
       --accent: #5b6af0;
       --accent2: #38d9a9;
-      --gold: #d4a843;
       --text: #e8eaf6;
       --muted: #7b84aa;
       --green: #38d9a9;
@@ -20,904 +20,236 @@
       --white: #ffffff;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
-
-    /* ── HEADER ── */
-    .header {
-      background: linear-gradient(160deg, #0d1530 0%, #111827 60%, #0b0e1a 100%);
-      border-bottom: 1px solid var(--border);
-      padding: 36px 48px 28px;
-    }
-    .header-inner { max-width: 1280px; margin: 0 auto; }
-    .header-top { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
-    .header-logos { display: flex; align-items: center; gap: 20px; }
-    .logo-pga {
-      height: 52px; width: 52px; background: linear-gradient(135deg, #003153 0%, #00538a 100%);
-      border-radius: 12px; display: flex; align-items: center; justify-content: center;
-      font-size: 16px; font-weight: 900; color: white; letter-spacing: -0.5px;
-      border: 1.5px solid rgba(255,255,255,0.15); flex-shrink: 0;
-    }
-    .logo-sep { font-size: 20px; color: var(--muted); }
-    .logo-amp {
-      height: 52px; width: 52px; background: linear-gradient(135deg, #4a55d4 0%, #7c4dcc 100%);
-      border-radius: 12px; display: flex; align-items: center; justify-content: center;
-      font-size: 16px; font-weight: 900; color: white;
-      border: 1.5px solid rgba(255,255,255,0.15); flex-shrink: 0;
-    }
-    .header-text { margin-top: 24px; }
-    .header-text h1 { font-size: 30px; font-weight: 800; letter-spacing: -0.5px; line-height: 1.15; }
-    .header-text h1 span { color: var(--accent); }
-    .header-text p { font-size: 15px; color: var(--muted); margin-top: 8px; max-width: 680px; line-height: 1.6; }
-    .header-meta { display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap; align-items: center; }
-    .pill {
-      padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: 600;
-      display: inline-flex; align-items: center; gap: 6px;
-    }
-    .pill-green { background: rgba(56,217,169,0.12); color: var(--green); border: 1px solid rgba(56,217,169,0.25); }
-    .pill-blue { background: rgba(91,106,240,0.12); color: #a0aaff; border: 1px solid rgba(91,106,240,0.25); }
-    .pill-gold { background: rgba(212,168,67,0.12); color: var(--gold); border: 1px solid rgba(212,168,67,0.25); }
-    .pulse { width: 7px; height: 7px; background: var(--green); border-radius: 50%; animation: pulse 2s infinite; }
-    @keyframes pulse { 0%,100%{opacity:1}50%{opacity:0.3} }
-
-    /* ── NAV ── */
-    .nav-wrap { background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
-    .nav { max-width: 1280px; margin: 0 auto; padding: 0 48px; display: flex; gap: 2px; overflow-x: auto; }
-    .nav a {
-      padding: 13px 16px; font-size: 13px; font-weight: 500; color: var(--muted);
-      text-decoration: none; border-bottom: 2px solid transparent; white-space: nowrap; transition: all 0.2s;
-    }
-    .nav a:hover { color: var(--text); }
-    .nav a.active { color: #a0aaff; border-bottom-color: var(--accent); }
-
-    /* ── MAIN LAYOUT ── */
-    .main { max-width: 1280px; margin: 0 auto; padding: 40px 48px 60px; }
-    @media(max-width:800px){ .main{padding:24px 20px 48px;} .header{padding:24px 20px 20px;} .nav{padding:0 20px;} }
-
-    /* ── SECTION HEADS ── */
-    .section-head {
-      display: flex; align-items: center; gap: 12px; margin: 44px 0 20px;
-      font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: var(--muted);
-    }
-    .section-head::after { content: ''; flex: 1; height: 1px; background: var(--border); }
-    .section-head span { font-size: 16px; }
-
-    /* ── CARDS ── */
-    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 24px; }
-    .card-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); margin-bottom: 18px; display: flex; align-items: center; gap: 8px; }
-
-    /* ── GRIDS ── */
-    .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-    .g3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
-    .g4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
-    @media(max-width:1100px){ .g3{grid-template-columns:1fr 1fr;} .g4{grid-template-columns:1fr 1fr;} }
-    @media(max-width:700px){ .g2,.g3,.g4{grid-template-columns:1fr;} }
-
-    /* ── GOAL STATS ── */
-    .goal-card {
-      background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
-      padding: 20px 22px; position: relative; overflow: hidden;
-    }
-    .goal-card::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; border-radius: 14px 14px 0 0;
-    }
-    .gc-green::before { background: linear-gradient(90deg, var(--green), #2bb890); }
-    .gc-blue::before { background: linear-gradient(90deg, var(--accent), #7c6af0); }
-    .gc-gold::before { background: linear-gradient(90deg, var(--gold), #c4943b); }
-    .gc-purple::before { background: linear-gradient(90deg, #a855f7, #7c3aed); }
-    .goal-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); margin-bottom: 8px; }
-    .goal-value { font-size: 30px; font-weight: 800; letter-spacing: -1px; line-height: 1; }
-    .gv-green { color: var(--green); }
-    .gv-blue { color: #a0aaff; }
-    .gv-gold { color: var(--gold); }
-    .gv-purple { color: #c084fc; }
-    .goal-sub { font-size: 12px; color: var(--muted); margin-top: 5px; }
-
-    /* ── PROGRESS ── */
-    .prog-row { margin-bottom: 14px; }
-    .prog-label { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 5px; }
-    .prog-label span:last-child { color: var(--muted); }
-    .prog-bar { height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; }
-    .prog-fill { height: 100%; border-radius: 3px; }
-    .pf-green { background: linear-gradient(90deg, var(--green), #2bb890); }
-    .pf-blue { background: linear-gradient(90deg, var(--accent), #7c6af0); }
-    .pf-gold { background: linear-gradient(90deg, var(--gold), #c4943b); }
-    .pf-muted { background: var(--border); }
-
-    /* ── PEOPLE ── */
-    .people-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
-    .person {
-      background: var(--surface2); border: 1px solid var(--border); border-radius: 12px;
-      padding: 16px 18px; display: flex; align-items: flex-start; gap: 14px;
-    }
-    .av {
-      width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0;
-      display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px; color: white;
-    }
-    .av-pga { background: linear-gradient(135deg, #003153, #005a9e); }
-    .av-amp { background: linear-gradient(135deg, #4a55d4, #7c4dcc); }
-    .pname { font-size: 14px; font-weight: 700; }
-    .ptitle { font-size: 12px; color: var(--muted); margin-top: 2px; line-height: 1.35; }
-    .plinks { margin-top: 7px; display: flex; flex-direction: column; gap: 3px; }
-    .plink { font-size: 12px; color: var(--accent); text-decoration: none; display: flex; align-items: center; gap: 5px; }
-    .plink:hover { color: #c0c8ff; }
-    .ptag {
-      display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 20px;
-      margin-top: 6px; text-transform: uppercase; letter-spacing: 0.4px;
-    }
-    .ptag-teal { background: rgba(56,217,169,0.12); color: var(--green); border: 1px solid rgba(56,217,169,0.25); }
-    .ptag-blue { background: rgba(91,106,240,0.12); color: #a0aaff; border: 1px solid rgba(91,106,240,0.25); }
-    .ptag-gold { background: rgba(212,168,67,0.12); color: var(--gold); border: 1px solid rgba(212,168,67,0.25); }
-
-    /* ── INITIATIVES ── */
-    .init-list { display: flex; flex-direction: column; gap: 12px; }
-    .init {
-      background: var(--surface2); border: 1px solid var(--border); border-radius: 12px;
-      padding: 16px 18px; display: flex; gap: 14px; align-items: flex-start;
-    }
-    .init-icon {
-      width: 38px; height: 38px; border-radius: 9px; flex-shrink: 0;
-      display: flex; align-items: center; justify-content: center; font-size: 18px;
-    }
-    .ii-green { background: rgba(56,217,169,0.12); }
-    .ii-blue { background: rgba(91,106,240,0.12); }
-    .ii-gold { background: rgba(212,168,67,0.12); }
-    .ii-purple { background: rgba(168,85,247,0.12); }
-    .init-title { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
-    .init-desc { font-size: 13px; color: var(--muted); line-height: 1.55; }
-    .init-chips { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
-    .chip {
-      font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 600;
-      background: rgba(255,255,255,0.05); color: var(--muted); border: 1px solid var(--border);
-    }
-    .chip a { color: inherit; text-decoration: none; }
-    .chip a:hover { color: var(--text); }
-
-    /* ── CALENDAR ── */
-    .cal-list { display: flex; flex-direction: column; gap: 0; }
-    .cal-item {
-      display: flex; align-items: flex-start; gap: 16px; padding: 16px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .cal-item:last-child { border-bottom: none; }
-    .cal-date-box {
-      min-width: 56px; text-align: center; background: var(--surface2);
-      border-radius: 10px; padding: 8px; border: 1px solid var(--border); flex-shrink: 0;
-    }
-    .cdm { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.6px; }
-    .cdd { font-size: 22px; font-weight: 900; line-height: 1.1; }
-    .cdm-green { color: var(--green); }
-    .cdm-blue { color: #a0aaff; }
-    .cdm-gold { color: var(--gold); }
-    .cdm-purple { color: #c084fc; }
-    .cal-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
-    .cal-event-title { font-size: 14px; font-weight: 700; margin-bottom: 3px; }
-    .cal-event-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
-
-    /* ── MEETINGS ── */
-    .meeting-row {
-      display: flex; align-items: center; gap: 14px; padding: 13px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .meeting-row:last-child { border-bottom: none; }
-    .md-box {
-      min-width: 48px; text-align: center; background: rgba(91,106,240,0.1);
-      border-radius: 8px; padding: 5px 8px; flex-shrink: 0;
-    }
-    .md-mon { font-size: 10px; text-transform: uppercase; color: #a0aaff; font-weight: 700; letter-spacing: 0.5px; }
-    .md-day { font-size: 20px; font-weight: 800; line-height: 1.1; }
-    .m-title { font-size: 13px; font-weight: 700; margin-bottom: 2px; }
-    .m-sub { font-size: 12px; color: var(--muted); }
-    .m-link { margin-left: auto; flex-shrink: 0; }
-
-    /* ── BUTTONS ── */
-    .btn {
-      display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600;
-      padding: 6px 14px; border-radius: 8px; text-decoration: none; transition: all 0.2s; border: 1px solid;
-    }
-    .btn-primary { background: var(--accent); border-color: var(--accent); color: white; }
-    .btn-primary:hover { background: #4a57d0; }
-    .btn-ghost { background: rgba(91,106,240,0.1); border-color: rgba(91,106,240,0.25); color: #a0aaff; }
-    .btn-ghost:hover { background: rgba(91,106,240,0.2); }
-    .btn-green { background: rgba(56,217,169,0.1); border-color: rgba(56,217,169,0.25); color: var(--green); }
-    .btn-green:hover { background: rgba(56,217,169,0.2); }
-
-    /* ── QUICKLINKS ── */
-    .qlinks { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 10px; }
-    .qlink {
-      background: var(--surface2); border: 1px solid var(--border); border-radius: 12px;
-      padding: 14px 16px; text-decoration: none; color: var(--text);
-      display: flex; align-items: center; gap: 12px; transition: all 0.2s;
-    }
-    .qlink:hover { border-color: var(--accent); background: rgba(91,106,240,0.06); }
-    .qlink-icon { font-size: 22px; flex-shrink: 0; }
-    .qlink-label { font-size: 13px; font-weight: 700; }
-    .qlink-sub { font-size: 11px; color: var(--muted); margin-top: 1px; }
-
-    /* ── WINS ── */
-    .win {
-      background: var(--surface2); border: 1px solid rgba(56,217,169,0.2);
-      border-radius: 12px; padding: 14px 18px; display: flex; gap: 12px;
-    }
-    .win-icon { font-size: 20px; flex-shrink: 0; padding-top: 1px; }
-    .win-title { font-size: 13px; font-weight: 700; margin-bottom: 3px; color: var(--green); }
-    .win-desc { font-size: 12px; color: var(--muted); line-height: 1.55; }
-
-    /* ── NEWS ── */
-    .news-card {
-      background: var(--surface2); border: 1px solid var(--border); border-radius: 12px;
-      padding: 16px 18px; text-decoration: none; color: var(--text); display: flex;
-      flex-direction: column; transition: all 0.2s;
-    }
-    .news-card:hover { border-color: var(--accent); }
-    .news-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--accent); margin-bottom: 6px; }
-    .news-title { font-size: 14px; font-weight: 700; line-height: 1.35; margin-bottom: 6px; }
-    .news-desc { font-size: 12px; color: var(--muted); line-height: 1.55; flex: 1; }
-
-    /* ── DIVIDER ── */
-    .hr { height: 1px; background: var(--border); margin: 4px 0; }
-
-    /* ── FOOTER ── */
-    .footer {
-      border-top: 1px solid var(--border); padding: 28px 48px; text-align: center;
-      font-size: 12px; color: var(--muted); max-width: 100%;
-    }
-    .footer a { color: var(--accent); text-decoration: none; }
-    .footer a:hover { color: #a0aaff; }
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 36px 48px 32px; }
+    .header-logos { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+    .logo-box { width: 48px; height: 48px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 18px; color: #fff; }
+    .logo-pga { background: linear-gradient(135deg, #1a3a6b 0%, #0d2348 100%); font-size: 13px; letter-spacing: -0.5px; }
+    .logo-amp { background: linear-gradient(135deg, #5b6af0 0%, #7c3aed 100%); }
+    .logo-sep { color: var(--muted); font-size: 24px; font-weight: 300; }
+    .header h1 { font-size: 26px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+    .header-sub { color: var(--muted); font-size: 15px; margin-bottom: 16px; max-width: 700px; }
+    .pills { display: flex; flex-wrap: wrap; gap: 8px; }
+    .pill { padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 500; border: 1px solid; }
+    .pill-green { background: rgba(56,217,169,.12); color: var(--green); border-color: rgba(56,217,169,.3); }
+    .pill-blue  { background: rgba(91,106,240,.12); color: #8b99f8; border-color: rgba(91,106,240,.3); }
+    .nav { position: sticky; top: 0; z-index: 100; background: rgba(11,14,26,.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); padding: 0 48px; display: flex; gap: 0; overflow-x: auto; }
+    .nav a { color: var(--muted); font-size: 13px; font-weight: 500; padding: 14px 16px; white-space: nowrap; border-bottom: 2px solid transparent; transition: all .15s; }
+    .nav a:hover { color: var(--text); text-decoration: none; border-bottom-color: var(--accent); }
+    .main { max-width: 1280px; margin: 0 auto; padding: 48px 48px 80px; }
+    section { margin-bottom: 56px; }
+    .section-title { font-size: 11px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .goal-item { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 18px 22px; }
+    .goal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; flex-wrap: wrap; gap: 8px; }
+    .goal-name { font-weight: 600; font-size: 14px; color: var(--white); }
+    .goal-target { font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+    .progress-bar { height: 6px; background: var(--surface2); border-radius: 6px; overflow: hidden; margin-top: 8px; }
+    .progress-fill { height: 100%; border-radius: 6px; background: linear-gradient(90deg, var(--accent) 0%, var(--accent2) 100%); }
+    .status-chip { font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 12px; white-space: nowrap; }
+    .chip-active   { background: rgba(56,217,169,.15); color: var(--green); }
+    .chip-progress { background: rgba(91,106,240,.15); color: #8b99f8; }
+    .chip-exploring { background: rgba(247,197,90,.12); color: var(--yellow); }
+    .integration-row { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .integration-left { display: flex; align-items: center; gap: 12px; }
+    .integration-icon { width: 36px; height: 36px; border-radius: 8px; background: var(--surface2); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+    .integration-name { font-weight: 600; font-size: 14px; }
+    .integration-desc { font-size: 12px; color: var(--muted); margin-top: 2px; }
+    .win-card { background: var(--surface); border: 1px solid rgba(56,217,169,.3); border-radius: 12px; padding: 20px 22px; }
+    .win-icon { font-size: 22px; margin-bottom: 10px; }
+    .win-title { font-weight: 700; font-size: 14px; color: var(--green); margin-bottom: 8px; }
+    .win-body { font-size: 13px; color: var(--muted); line-height: 1.55; }
+    .initiative-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px 22px; }
+    .initiative-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin-bottom: 8px; }
+    .initiative-icon-title { display: flex; gap: 10px; align-items: flex-start; }
+    .initiative-icon { font-size: 20px; flex-shrink: 0; }
+    .initiative-name { font-weight: 600; font-size: 14px; color: var(--white); }
+    .initiative-body { font-size: 13px; color: var(--muted); line-height: 1.55; }
+    .cal-item { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; display: flex; gap: 16px; align-items: flex-start; }
+    .cal-date { background: var(--surface2); border-radius: 8px; padding: 8px 12px; text-align: center; min-width: 54px; flex-shrink: 0; }
+    .cal-month { font-size: 10px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: .8px; }
+    .cal-day   { font-size: 22px; font-weight: 700; color: var(--white); line-height: 1.1; }
+    .cal-content { flex: 1; }
+    .cal-title { font-weight: 600; font-size: 14px; color: var(--white); margin-bottom: 4px; }
+    .cal-desc  { font-size: 12px; color: var(--muted); }
+    .session-row { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px 20px; display: flex; gap: 16px; align-items: center; }
+    .session-date { background: var(--surface2); border-radius: 8px; padding: 6px 10px; text-align: center; min-width: 48px; flex-shrink: 0; }
+    .session-mo  { font-size: 10px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: .8px; }
+    .session-day { font-size: 18px; font-weight: 700; color: var(--white); line-height: 1; }
+    .session-info { flex: 1; }
+    .session-title { font-weight: 600; font-size: 13px; color: var(--white); }
+    .session-desc  { font-size: 12px; color: var(--muted); margin-top: 2px; }
+    .dash-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px 22px; }
+    .dash-title { font-weight: 600; font-size: 14px; color: var(--white); margin-bottom: 6px; }
+    .dash-desc  { font-size: 12px; color: var(--muted); margin-bottom: 12px; }
+    .feature-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px 22px; }
+    .feature-badge { font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 10px; background: rgba(91,106,240,.15); color: #8b99f8; display: inline-block; margin-bottom: 10px; letter-spacing: .6px; text-transform: uppercase; }
+    .feature-title { font-weight: 600; font-size: 14px; color: var(--white); margin-bottom: 6px; }
+    .feature-body  { font-size: 12px; color: var(--muted); line-height: 1.55; }
+    .feature-link  { margin-top: 10px; font-size: 12px; }
+    .team-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .team-section-title { font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .8px; margin-bottom: 14px; }
+    .person-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; display: flex; gap: 12px; align-items: center; margin-bottom: 8px; }
+    .avatar { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; color: #fff; flex-shrink: 0; }
+    .person-name  { font-weight: 600; font-size: 13px; color: var(--white); }
+    .person-title { font-size: 12px; color: var(--muted); }
+    .person-email { font-size: 11px; color: var(--accent); margin-top: 2px; }
+    .resource-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .resource-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; display: flex; gap: 10px; align-items: center; transition: border-color .15s; text-decoration: none; }
+    .resource-card:hover { border-color: var(--accent); text-decoration: none; }
+    .resource-icon { font-size: 18px; flex-shrink: 0; }
+    .resource-label { font-size: 13px; font-weight: 600; color: var(--text); }
+    .resource-sub   { font-size: 11px; color: var(--muted); margin-top: 2px; }
+    @media (max-width: 900px) { .grid-3 { grid-template-columns: 1fr 1fr; } .grid-4 { grid-template-columns: 1fr 1fr; } .team-cols { grid-template-columns: 1fr; } .resource-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 700px) { .header { padding: 24px 20px 20px; } .nav { padding: 0 12px; } .main { padding: 28px 16px 60px; } .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; } .resource-grid { grid-template-columns: 1fr; } .header h1 { font-size: 20px; } }
   </style>
 </head>
 <body>
-
-<!-- HEADER -->
 <div class="header">
-  <div class="header-inner">
-    <div class="header-top">
-      <div class="header-logos">
-        <div class="logo-pga">PGA</div>
-        <div class="logo-sep">×</div>
-        <div class="logo-amp">A</div>
-      </div>
-    </div>
-    <div class="header-text">
-      <h1>PGA TOUR <span>&</span> Amplitude</h1>
-      <p>A living home for everything we're building together — dashboards, goals, milestones, upcoming sessions, and the resources your team needs to get the most out of Amplitude.</p>
-    </div>
-    <div class="header-meta">
-      <span class="pill pill-green"><span class="pulse"></span> Active Partnership</span>
-      <span class="pill pill-blue">📍 Ponte Vedra Beach, FL</span>
-      <span class="pill pill-gold">🏌️ Onsite: May 26–27, 2026</span>
-    </div>
+  <div class="header-logos">
+    <div class="logo-box logo-pga">PGA</div>
+    <span class="logo-sep">×</span>
+    <div class="logo-box logo-amp">A</div>
+  </div>
+  <h1>PGA TOUR × Amplitude — Partnership Hub</h1>
+  <p class="header-sub">Amplitude is the fan intelligence platform powering PGA TOUR's identity strategy, audience activation, and digital growth — from authenticated fan journeys to real-time cohort campaigns that reach fans where they are.</p>
+  <div class="pills">
+    <span class="pill pill-green">Active Partnership</span>
+    <span class="pill pill-blue">Analytics</span>
+    <span class="pill pill-blue">CDP / Activation</span>
+    <span class="pill pill-blue">Predictive Syncs (PSP)</span>
+    <span class="pill pill-blue">Customer since 2022</span>
   </div>
 </div>
-
-<!-- NAV -->
-<div class="nav-wrap">
-  <div class="nav">
-    <a href="#goals" class="active">2026 Goals</a>
-    <a href="#initiatives">Initiatives</a>
-    <a href="#calendar">Calendar</a>
-    <a href="#dashboards">Dashboards</a>
-    <a href="#meetings">Meetings & Decks</a>
-    <a href="#wins">Wins</a>
-    <a href="#news">What's New</a>
-    <a href="#team">Our Team</a>
-    <a href="#resources">Resources</a>
-  </div>
-</div>
-
+<nav class="nav">
+  <a href="#goals">Goals</a>
+  <a href="#integrations">Integrations</a>
+  <a href="#wins">Wins</a>
+  <a href="#initiatives">Initiatives</a>
+  <a href="#calendar">Calendar</a>
+  <a href="#sessions">Sessions</a>
+  <a href="#dashboards">Dashboards</a>
+  <a href="#newatamp">What's New</a>
+  <a href="#team">Team</a>
+  <a href="#resources">Resources</a>
+</nav>
 <div class="main">
-
-  <!-- 2026 GOALS -->
-  <div id="goals"></div>
-  <div class="section-head"><span>🎯</span> PGA TOUR 2026 Digital Goals</div>
-  <div class="g4" style="margin-bottom:20px">
-    <div class="goal-card gc-green">
-      <div class="goal-label">North Star Goal</div>
-      <div class="goal-value gv-green">1M</div>
-      <div class="goal-sub">Active users by EOY 2026</div>
+  <section id="goals">
+    <div class="section-title">Progress Toward Goals</div>
+    <div class="grid-2">
+      <div class="goal-item"><div class="goal-header"><span class="goal-name">🏌️ PGA TOUR Pass Membership Launch</span><span class="status-chip chip-active">Live ✓</span></div><div class="goal-target">Goal: Grow authenticated fan base via PGA TOUR Pass</div><div class="progress-bar"><div class="progress-fill" style="width:75%"></div></div><div style="font-size:12px;color:var(--muted);margin-top:6px;">112K authenticated users at The Players Championship · Monthly run rate building</div></div>
+      <div class="goal-item"><div class="goal-header"><span class="goal-name">👤 1M Active Users by EOY 2026</span><span class="status-chip chip-progress">In Progress</span></div><div class="goal-target">Goal: 1M active users / 5M authenticated fans (full-year target)</div><div class="progress-bar"><div class="progress-fill" style="width:40%"></div></div><div style="font-size:12px;color:var(--muted);margin-top:6px;">Players Championship peak: 112K · Membership funnel live · Scaling through 2026</div></div>
+      <div class="goal-item"><div class="goal-header"><span class="goal-name">🔁 Fan Retention</span><span class="status-chip chip-progress">In Progress</span></div><div class="goal-target">Goal: +5% new user week-over-week retention</div><div class="progress-bar"><div class="progress-fill" style="width:50%"></div></div><div style="font-size:12px;color:var(--muted);margin-top:6px;">Tracking in 2026 KPI Dashboard · Baseline set Q1 2026</div></div>
+      <div class="goal-item"><div class="goal-header"><span class="goal-name">📈 Engagement Depth</span><span class="status-chip chip-progress">In Progress</span></div><div class="goal-target">Goal: +8% page views per session vs 2025</div><div class="progress-bar"><div class="progress-fill" style="width:45%"></div></div><div style="font-size:12px;color:var(--muted);margin-top:6px;">Depth, frequency, and authenticated session metrics in dashboard</div></div>
+      <div class="goal-item"><div class="goal-header"><span class="goal-name">⛳ Fantasy Active Users</span><span class="status-chip chip-progress">In Progress</span></div><div class="goal-target">Goal: Fantasy active users +20% YoY</div><div class="progress-bar"><div class="progress-fill" style="width:35%"></div></div><div style="font-size:12px;color:var(--muted);margin-top:6px;">Fantasy cohort analysis active · Segment-level tracking underway</div></div>
+      <div class="goal-item"><div class="goal-header"><span class="goal-name">🤖 AI &amp; MCP Enablement</span><span class="status-chip chip-exploring">Pending Legal</span></div><div class="goal-target">Goal: Enable MCP + Ask Amplitude for product and data team</div><div class="progress-bar"><div class="progress-fill" style="width:20%"></div></div><div style="font-size:12px;color:var(--muted);margin-top:6px;">Ask AI enabled · 7 MCP use cases pitched to AI Board · Legal review underway</div></div>
     </div>
-    <div class="goal-card gc-blue">
-      <div class="goal-label">PGA Tour Pass</div>
-      <div class="goal-value gv-blue">112K</div>
-      <div class="goal-sub">Authenticated users at Players Championship</div>
+  </section>
+  <section id="integrations">
+    <div class="section-title">Active Integrations</div>
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <div class="integration-row"><div class="integration-left"><div class="integration-icon">📣</div><div><div class="integration-name">Braze</div><div class="integration-desc">Daily cohort syncs powering personalized fan campaigns and lifecycle messaging</div></div></div><span class="status-chip chip-active">Active</span></div>
+      <div class="integration-row"><div class="integration-left"><div class="integration-icon">📲</div><div><div class="integration-name">Urban Airship (Airship)</div><div class="integration-desc">40–50 cohort syncs/month · Player-following alerts, tournament-week push, re-engagement campaigns</div></div></div><span class="status-chip chip-active">Active</span></div>
+      <div class="integration-row"><div class="integration-left"><div class="integration-icon">👤</div><div><div class="integration-name">Gigya Identity Layer</div><div class="integration-desc">Canonical identity source for all known &amp; authenticated fans across web and iOS/Android</div></div></div><span class="status-chip chip-active">Active</span></div>
+      <div class="integration-row"><div class="integration-left"><div class="integration-icon">📊</div><div><div class="integration-name">Facebook Ads API &amp; Google Ads API</div><div class="integration-desc">Server-side conversion data flowing into Amplitude · Full click ID attribution (gclid, fbclid, msclkid, ttclid)</div></div></div><span class="status-chip chip-active">Active</span></div>
+      <div class="integration-row"><div class="integration-left"><div class="integration-icon">🛡️</div><div><div class="integration-name">OneTrust Consent Management</div><div class="integration-desc">Consent groups tracked on all events via onetrustActiveGroups · GDPR/CCPA coverage</div></div></div><span class="status-chip chip-active">Active</span></div>
+      <div class="integration-row"><div class="integration-left"><div class="integration-icon">🤖</div><div><div class="integration-name">Amplitude MCP / VS Code</div><div class="integration-desc">7 use cases proposed to AI Board · Real-time KPI queries, PRD pre-fill, SEV-1 risk flagging, automated reporting</div></div></div><span class="status-chip chip-exploring">Pending Legal</span></div>
+      <div class="integration-row"><div class="integration-left"><div class="integration-icon">🎥</div><div><div class="integration-name">Session Replay</div><div class="integration-desc">High demand — especially for the Membership Hub funnel · Targeting end of 2026 pending privacy review</div></div></div><span class="status-chip chip-exploring">2026 Target</span></div>
     </div>
-    <div class="goal-card gc-gold">
-      <div class="goal-label">Active Audience Syncs</div>
-      <div class="goal-value gv-gold">40–50</div>
-      <div class="goal-sub">Cohort syncs per month to Airship</div>
+  </section>
+  <section id="wins">
+    <div class="section-title">Shared Wins</div>
+    <div class="grid-3">
+      <div class="win-card"><div class="win-icon">🏆</div><div class="win-title">PGA TOUR Pass Launched</div><div class="win-body">The Players Championship drove 112K authenticated fan sessions with Amplitude as the source of truth for fan identity, engagement, and LTV. The membership hub funnel is live and powering Braze activation from day one.</div></div>
+      <div class="win-card"><div class="win-icon">📊</div><div class="win-title">2026 KPI Dashboard Built</div><div class="win-body">Built collaboratively with Matt Mullen — WAU, retention, hub reach, engagement depth, and authentication metrics all in one place. Now the shared source of truth for weekly and monthly reporting across the team.</div></div>
+      <div class="win-card"><div class="win-icon">🎯</div><div class="win-title">Audience Activation at Scale</div><div class="win-body">40–50 cohort syncs per month to Airship plus daily Braze syncs — powering player-following alerts, tournament-week messaging, geo-targeted fan outreach, and re-engagement. One of the most mature activation programs in the Amplitude enterprise portfolio.</div></div>
+      <div class="win-card"><div class="win-icon">🧹</div><div class="win-title">Clean Data Foundation</div><div class="win-body">Data audit rated PGA TOUR's taxonomy as exemplary: 79 clean events, tidy schema, zero critical issues. Rare at this scale — and it means every analysis and cohort built on this data is trustworthy.</div></div>
+      <div class="win-card"><div class="win-icon">🤖</div><div class="win-title">Internal AI Champion: Scott Coulter</div><div class="win-body">Scott independently wrote up 7 MCP use cases and pitched them to PGA TOUR's AI Board — real-time KPI insights in VS Code, automated reporting, and persona-tested products. Legal approval is the only remaining gate.</div></div>
+      <div class="win-card"><div class="win-icon">🔗</div><div class="win-title">Full Cross-Platform Attribution</div><div class="win-body">Complete UTM and click ID coverage live — Google, Facebook, Microsoft, TikTok, and DoubleClick — giving PGA TOUR a unified view of fan acquisition across every major ad platform.</div></div>
     </div>
-    <div class="goal-card gc-purple">
-      <div class="goal-label">New User Retention</div>
-      <div class="goal-value gv-purple">+5%</div>
-      <div class="goal-sub">Target YoY improvement for 2026</div>
+  </section>
+  <section id="initiatives">
+    <div class="section-title">Active Initiatives</div>
+    <div class="grid-2">
+      <div class="initiative-card"><div class="initiative-header"><div class="initiative-icon-title"><div class="initiative-icon">🎫</div><div class="initiative-name">PGA TOUR Pass Membership Growth</div></div><span class="status-chip chip-progress">In Progress</span></div><div class="initiative-body">Growing the membership program from its Players Championship peak toward 1M active users by EOY. Amplitude tracks the full funnel: fan auth, hub activation, engagement scoring, and conversion to ticket/offer redemptions.</div></div>
+      <div class="initiative-card"><div class="initiative-header"><div class="initiative-icon-title"><div class="initiative-icon">🛡️</div><div class="initiative-name">Activation Value Documentation</div></div><span class="status-chip chip-progress">In Progress</span></div><div class="initiative-body">Building the activation case ahead of May renewal: three-pillar one-pager (identity resolution, audience management, audience activation), Analytics vs. Activation Venn diagram, and Journey Orchestration vs. Braze Canvas comparison.</div></div>
+      <div class="initiative-card"><div class="initiative-header"><div class="initiative-icon-title"><div class="initiative-icon">✈️</div><div class="initiative-name">Jacksonville On-Site — May 26–27</div></div><span class="status-chip chip-progress">Scheduled</span></div><div class="initiative-body">Deep-dive on AI features, self-serve analytics motion, fan journey optimization, and new use case exploration with Scott Coulter's growing analytics org. Adam on roadmap, Kiley on AI walkthrough with Evan Cohen.</div></div>
+      <div class="initiative-card"><div class="initiative-header"><div class="initiative-icon-title"><div class="initiative-icon">🤖</div><div class="initiative-name">AI &amp; MCP Enablement</div></div><span class="status-chip chip-exploring">Pending Legal</span></div><div class="initiative-body">Ask Amplitude live. Scott Coulter champions MCP adoption — 7 use cases pitched to internal AI Board. Training session planned for the moment legal clears. Next: connect with new Analytics PM hire once onboarded.</div></div>
+      <div class="initiative-card"><div class="initiative-header"><div class="initiative-icon-title"><div class="initiative-icon">👥</div><div class="initiative-name">Fan Segmentation &amp; Clustering</div></div><span class="status-chip chip-progress">In Progress</span></div><div class="initiative-body">Active work on fan clustering and engagement scoring with Kacie Shea and the data team — supporting membership growth, PGA TOUR Pass personalization, and broader fan-engagement use cases.</div></div>
+      <div class="initiative-card"><div class="initiative-header"><div class="initiative-icon-title"><div class="initiative-icon">🎥</div><div class="initiative-name">Session Replay Readiness</div></div><span class="status-chip chip-exploring">2026 Target</span></div><div class="initiative-body">High demand — especially for the Membership Hub funnel. Blocked by wiretapping/privacy review. Scott Coulter targeting end of 2026 once legal review completes and Amplitude's privacy controls are confirmed.</div></div>
     </div>
-  </div>
-
-  <div class="g2" style="margin-bottom:20px">
-    <div class="card">
-      <div class="card-title">📈 Progress Toward Goals</div>
-      <div class="prog-row">
-        <div class="prog-label"><span>PGA Tour Pass — Authenticated Users</span><span>Launch ✓ · Tracking</span></div>
-        <div class="prog-bar"><div class="prog-fill pf-green" style="width:65%"></div></div>
-      </div>
-      <div class="prog-row">
-        <div class="prog-label"><span>2026 Digital KPI Dashboard</span><span>Live ✓</span></div>
-        <div class="prog-bar"><div class="prog-fill pf-green" style="width:100%"></div></div>
-      </div>
-      <div class="prog-row">
-        <div class="prog-label"><span>Active Audience Personalization (Airship)</span><span>Active ✓</span></div>
-        <div class="prog-bar"><div class="prog-fill pf-green" style="width:85%"></div></div>
-      </div>
-      <div class="prog-row">
-        <div class="prog-label"><span>Predictive Audiences — 6 Built</span><span>Ready to activate</span></div>
-        <div class="prog-bar"><div class="prog-fill pf-gold" style="width:40%"></div></div>
-      </div>
-      <div class="prog-row">
-        <div class="prog-label"><span>Braze Conversion Loop</span><span>In progress</span></div>
-        <div class="prog-bar"><div class="prog-fill pf-blue" style="width:25%"></div></div>
-      </div>
-      <div class="prog-row" style="margin-bottom:0">
-        <div class="prog-label"><span>Journey Orchestration</span><span>Exploring</span></div>
-        <div class="prog-bar"><div class="prog-fill pf-blue" style="width:10%"></div></div>
-      </div>
+  </section>
+  <section id="calendar">
+    <div class="section-title">Upcoming Calendar</div>
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <div class="cal-item"><div class="cal-date"><div class="cal-month">Apr</div><div class="cal-day">22</div></div><div class="cal-content"><div class="cal-title">PGA TOUR × Amplitude: Monthly Strategic Sync</div><div class="cal-desc">7:00 AM PT · 45 min · Zoom · 22 attendees · Monthly strategic initiative, planning, and user adoption collaboration</div></div></div>
+      <div class="cal-item"><div class="cal-date"><div class="cal-month">May</div><div class="cal-day">20</div></div><div class="cal-content"><div class="cal-title">PGA TOUR × Amplitude: Monthly Strategic Sync</div><div class="cal-desc">7:00 AM PT · 45 min · Zoom · Pre-onsite prep and alignment check-in</div></div></div>
+      <div class="cal-item" style="border-color:rgba(91,106,240,.4);background:rgba(91,106,240,.06);"><div class="cal-date" style="background:rgba(91,106,240,.15);"><div class="cal-month" style="color:#8b99f8;">May</div><div class="cal-day" style="color:#8b99f8;">26</div></div><div class="cal-content"><div class="cal-title" style="color:#8b99f8;">⭐ PGA TOUR × Amplitude: On-Site — Jacksonville, FL</div><div class="cal-desc">May 26–27 · Ponte Vedra Beach · Deep-dive on AI features, self-serve analytics, fan journey optimization, and use case exploration with Scott Coulter's team</div></div></div>
+      <div class="cal-item"><div class="cal-date"><div class="cal-month">Jun</div><div class="cal-day">17</div></div><div class="cal-content"><div class="cal-title">PGA TOUR × Amplitude: Monthly Strategic Sync</div><div class="cal-desc">7:00 AM PT · 45 min · Zoom</div></div></div>
     </div>
-    <div class="card">
-      <div class="card-title">⚡ Active Integrations</div>
-      <div style="display:flex;flex-direction:column;gap:10px;font-size:13px;">
-        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:var(--surface2);border-radius:8px;border:1px solid var(--border)">
-          <span>Airship (Push Notifications)</span>
-          <span class="pill pill-green" style="font-size:11px">✓ Active</span>
-        </div>
-        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:var(--surface2);border-radius:8px;border:1px solid var(--border)">
-          <span>Braze (Email & CRM)</span>
-          <span class="pill pill-blue" style="font-size:11px">↗ Expanding</span>
-        </div>
-        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:var(--surface2);border-radius:8px;border:1px solid var(--border)">
-          <span>Snowflake (Data Warehouse)</span>
-          <span class="pill pill-green" style="font-size:11px">✓ Active</span>
-        </div>
-        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:var(--surface2);border-radius:8px;border:1px solid var(--border)">
-          <span>Facebook & Google Ads (Conversion)</span>
-          <span class="pill pill-green" style="font-size:11px">✓ Active</span>
-        </div>
-        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:var(--surface2);border-radius:8px;border:1px solid var(--border)">
-          <span>Microsoft Teams</span>
-          <span class="pill pill-blue" style="font-size:11px">↗ In Progress</span>
-        </div>
-        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:var(--surface2);border-radius:8px;border:1px solid var(--border)">
-          <span>Journey Orchestration</span>
-          <span class="pill pill-gold" style="font-size:11px">🔜 Exploring</span>
-        </div>
-      </div>
+  </section>
+  <section id="sessions">
+    <div class="section-title">Recent Sessions &amp; Shared Documents</div>
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <div class="session-row"><div class="session-date"><div class="session-mo">Apr</div><div class="session-day">07</div></div><div class="session-info"><div class="session-title">Activation Strategy Working Session</div><div class="session-desc">Pod session on activation value documentation, JO vs. Braze Canvas, and renewal materials</div></div></div>
+      <div class="session-row"><div class="session-date"><div class="session-mo">Mar</div><div class="session-day">25</div></div><div class="session-info"><div class="session-title">Scott Coulter: Analytics &amp; MCP Roadmap Sync</div><div class="session-desc">MCP use cases, Analytics PM hire plans, and AI training roadmap with Scott Coulter (Dir. Tech Infrastructure)</div></div></div>
+      <div class="session-row"><div class="session-date"><div class="session-mo">Mar</div><div class="session-day">18</div></div><div class="session-info"><div class="session-title">2026 Digital KPI Dashboard Build</div><div class="session-desc">Collaborative build session with Matt Mullen — WAU, retention, hub reach, and authentication metrics</div></div></div>
+      <div class="session-row"><div class="session-date"><div class="session-mo">Apr</div><div class="session-day">02</div></div><div class="session-info"><div class="session-title">Go-Live Win Story Presentation</div><div class="session-desc">Presented PGA TOUR outcomes to internal Amplitude team — key wins, value delivered, and how Amplitude meets them where they are</div></div></div>
     </div>
-  </div>
-
-  <!-- INITIATIVES -->
-  <div id="initiatives"></div>
-  <div class="section-head"><span>🚀</span> What We're Working On Together</div>
-  <div class="init-list" style="margin-bottom:20px">
-
-    <div class="init">
-      <div class="init-icon ii-gold">🏌️</div>
-      <div style="flex:1">
-        <div class="init-title">PGA Tour Pass — Membership Analytics & Engagement</div>
-        <div class="init-desc">Tracking the full PGA Tour Pass launch and its impact on authenticated user growth toward the 1M MAU goal. Building dashboards for membership acquisition, engagement, and retention — with a focus on converting the ~200–300 monthly run-rate to a meaningful growth curve by year end.</div>
-        <div class="init-chips">
-          <span class="chip">DRI: Kiley + Matt Mullen</span>
-          <span class="chip">📊 <a href="https://app.amplitude.com/analytics/pgatour/dashboard/d3goyvhi" target="_blank">PGA Tour Pass Dashboard</a></span>
-        </div>
-      </div>
+  </section>
+  <section id="dashboards">
+    <div class="section-title">Shared Dashboards &amp; Reports</div>
+    <div class="grid-3">
+      <div class="dash-card"><div class="dash-title">📊 PGA TOUR Pass Dashboard</div><div class="dash-desc">Fan auth funnel, membership hub reach, activation, engagement depth, and revenue per fan — the primary membership KPI view</div><a href="https://app.amplitude.com/analytics/pgatour/dashboard/d3goyvhi?source=copy+url" target="_blank" style="font-size:13px;">Open Dashboard →</a></div>
+      <div class="dash-card"><div class="dash-title">📈 2026 Digital KPI Dashboard</div><div class="dash-desc">WAU, retention, engagement depth, frequency, and authentication metrics vs. 2026 goals — built collaboratively with Matt Mullen</div><a href="https://app.amplitude.com/analytics/pgatour/dashboard/wbemupda?source=copy+url" target="_blank" style="font-size:13px;">Open Dashboard →</a></div>
+      <div class="dash-card"><div class="dash-title">🔗 Open in Amplitude</div><div class="dash-desc">Direct link to the PGA TOUR Amplitude workspace — all projects, charts, cohorts, and analyses</div><a href="https://app.amplitude.com/analytics/pgatour/" target="_blank" style="font-size:13px;">Open Workspace →</a></div>
     </div>
-
-    <div class="init">
-      <div class="init-icon ii-green">🎯</div>
-      <div style="flex:1">
-        <div class="init-title">Unlocking Predictive Audiences — 6 Cohorts Ready to Activate</div>
-        <div class="init-desc">Six prediction cohorts have been built in Amplitude — including Authentication Probability and Follow Player Probability — and are ready to be activated with live syncs and experiments. Turning these on connects behavioral prediction directly to Airship campaigns and Braze messaging.</div>
-        <div class="init-chips">
-          <span class="chip">DRI: Sam + Kiley + Stephen Hill</span>
-          <span class="chip">Status: Ready to activate</span>
-          <span class="chip">📊 <a href="https://app.amplitude.com/audiences/pgatour/syncs" target="_blank">View Syncs</a></span>
-        </div>
-      </div>
+  </section>
+  <section id="newatamp">
+    <div class="section-title">What's New at Amplitude</div>
+    <div class="grid-4">
+      <div class="feature-card"><div class="feature-badge">Now Available</div><div class="feature-title">Amplitude MCP Server</div><div class="feature-body">Connect Amplitude directly to VS Code and GitHub Copilot. Real-time KPI queries, automated reporting, PRD pre-fill — exactly what Scott Coulter pitched to your AI Board. Legal approval unlocks this immediately.</div><div class="feature-link"><a href="https://amplitude.com/docs/amplitude-ai/amplitude-mcp" target="_blank">MCP Docs →</a></div></div>
+      <div class="feature-card"><div class="feature-badge">Now Available</div><div class="feature-title">Journey Orchestration</div><div class="feature-body">Build and trigger cross-channel fan journeys from Amplitude cohorts. A complement or alternative to Braze Canvas for high-intent membership moments — exactly what Evan Cohen asked about in the April activation call.</div><div class="feature-link"><a href="https://amplitude.com/docs" target="_blank">Amplitude Docs →</a></div></div>
+      <div class="feature-card"><div class="feature-badge">Now Available</div><div class="feature-title">Ask Amplitude (AI Chat)</div><div class="feature-body">Natural language questions answered from your Amplitude data — no chart building required. Ask about fan retention, tournament engagement, or cohort trends in plain English. Now live for PGA TOUR.</div><div class="feature-link"><a href="https://amplitude.com/docs/amplitude-ai" target="_blank">AI Features Docs →</a></div></div>
+      <div class="feature-card"><div class="feature-badge">Coming 2026</div><div class="feature-title">Session Replay + Privacy Controls</div><div class="feature-body">Amplitude is building stronger consent-aware masking, privacy controls, and legal sign-off tooling for Session Replay — directly addressing PGA TOUR's wiretapping review blockers. Targeting availability for end-of-2026 rollout.</div><div class="feature-link"><a href="https://amplitude.com/docs/session-replay" target="_blank">Session Replay Docs →</a></div></div>
     </div>
-
-    <div class="init">
-      <div class="init-icon ii-blue">🔗</div>
-      <div style="flex:1">
-        <div class="init-title">Closing the Braze Conversion Loop</div>
-        <div class="init-desc">Braze is live as a destination for daily audience syncs. The next step is flowing conversion data back into Amplitude so the full campaign-to-conversion story is measurable — and so PGA Tour can see exactly which Amplitude-driven audiences are driving the most value in Braze.</div>
-        <div class="init-chips">
-          <span class="chip">DRI: Sam + Shessvy</span>
-          <span class="chip">Impact: Full ROI visibility for all Braze campaigns</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="init">
-      <div class="init-icon ii-purple">🤖</div>
-      <div style="flex:1">
-        <div class="init-title">AI Analytics — Deeper Adoption Across the Team</div>
-        <div class="init-desc">PGA Tour's AI use cases were highlighted as a company win at Amplitude's All Hands in April 2026. Building on Andy Panjic's early momentum, the goal is to expand AI-powered analysis to the broader product and marketing team — and walk through specific AI use cases for fan engagement and personalization.</div>
-        <div class="init-chips">
-          <span class="chip">Champion: Andy Panjic</span>
-          <span class="chip">Featured: Amplitude All Hands, Apr 2026</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="init">
-      <div class="init-icon ii-gold">✈️</div>
-      <div style="flex:1">
-        <div class="init-title">Journey Orchestration — Evaluating for Fan Engagement</div>
-        <div class="init-desc">Amplitude's Journey Orchestration enables multi-step behavioral campaigns triggered by real-time events — a natural fit for tournament-week messaging, player-following journeys, and PGA Tour Pass onboarding. We're building a comparison and initial use case framework to evaluate this alongside Braze Canvas.</div>
-        <div class="init-chips">
-          <span class="chip">DRI: Nitin Sethi + Shessvy</span>
-          <span class="chip">Status: Evaluation in progress</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="init">
-      <div class="init-icon ii-blue">🖥️</div>
-      <div style="flex:1">
-        <div class="init-title">Microsoft Teams Integration + MCP Exploration</div>
-        <div class="init-desc">Teams integration is underway — working through authentication configuration with Scott Colter and Keaton Tucker. Additionally exploring Amplitude's MCP capabilities for deeper integration with PGA Tour's existing developer workflows.</div>
-        <div class="init-chips">
-          <span class="chip">DRI: Scott Colter (PGA)</span>
-          <span class="chip">Status: Auth in progress</span>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- CALENDAR -->
-  <div id="calendar"></div>
-  <div class="section-head"><span>📅</span> Upcoming Calendar</div>
-  <div class="g2" style="margin-bottom:20px">
-    <div class="card">
-      <div class="card-title">🗓️ Upcoming</div>
-      <div class="cal-list">
-        <div class="cal-item">
-          <div class="cal-date-box">
-            <div class="cdm cdm-gold">MAY</div>
-            <div class="cdd">26</div>
-          </div>
-          <div class="cal-dot" style="background:var(--gold);margin-top:6px"></div>
-          <div>
-            <div class="cal-event-title">⛳ Golf — Matt Mullen & Evan Cohen + Amplitude Team</div>
-            <div class="cal-event-desc">1:00pm · Jacksonville, FL · Informal kickoff for the onsite week</div>
-          </div>
-        </div>
-        <div class="cal-item">
-          <div class="cal-date-box">
-            <div class="cdm cdm-green">MAY</div>
-            <div class="cdd">27</div>
-          </div>
-          <div class="cal-dot" style="background:var(--green);margin-top:6px"></div>
-          <div>
-            <div class="cal-event-title">🏢 Onsite — PGA TOUR HQ, Jacksonville</div>
-            <div class="cal-event-desc">10:00am–2:30pm · Working session: roadmap, AI, activation deep-dive · Lunch at noon</div>
-          </div>
-        </div>
-        <div class="cal-item">
-          <div class="cal-date-box">
-            <div class="cdm cdm-blue">MON</div>
-            <div class="cdd">3rd</div>
-          </div>
-          <div class="cal-dot" style="background:var(--accent);margin-top:6px"></div>
-          <div>
-            <div class="cal-event-title">🔄 Monthly Strategic Sync</div>
-            <div class="cal-event-desc">Recurring · Kiley + David + full PGA Tour product & data team</div>
-          </div>
-        </div>
-        <div class="cal-item">
-          <div class="cal-date-box">
-            <div class="cdm cdm-purple" style="color:#c084fc">~Q3</div>
-            <div class="cdd" style="font-size:16px">QBR</div>
-          </div>
-          <div class="cal-dot" style="background:#c084fc;margin-top:6px"></div>
-          <div>
-            <div class="cal-event-title">📋 Quarterly Business Review</div>
-            <div class="cal-event-desc">Post-renewal QBR · Joint review of H1 outcomes and H2 roadmap</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-title">💡 Session Ideas — Let's Prioritize</div>
-      <div style="display:flex;flex-direction:column;gap:10px;font-size:13px">
-        <div style="padding:12px 14px;background:var(--surface2);border-radius:10px;border:1px solid var(--border)">
-          <div style="font-weight:700;margin-bottom:3px">🤖 AI Walkthrough & Use Case Workshop</div>
-          <div style="color:var(--muted);font-size:12px">Walk through Ask Amplitude, AI Insights, and build fan engagement use cases specific to PGA Tour Pass and player-following</div>
-        </div>
-        <div style="padding:12px 14px;background:var(--surface2);border-radius:10px;border:1px solid var(--border)">
-          <div style="font-weight:700;margin-bottom:3px">🎯 Predictive Cohort Activation Sprint</div>
-          <div style="color:var(--muted);font-size:12px">2-hour working session to activate all 6 prediction cohorts and wire them to live Airship campaigns</div>
-        </div>
-        <div style="padding:12px 14px;background:var(--surface2);border-radius:10px;border:1px solid var(--border)">
-          <div style="font-weight:700;margin-bottom:3px">✈️ Journey Orchestration Demo + Scoping</div>
-          <div style="color:var(--muted);font-size:12px">Live demo of Journey Orchestration — compare to Braze Canvas and scope first journey for PGA Tour Pass onboarding</div>
-        </div>
-        <div style="padding:12px 14px;background:var(--surface2);border-radius:10px;border:1px solid var(--border)">
-          <div style="font-weight:700;margin-bottom:3px">📊 New User Retention Deep Dive</div>
-          <div style="color:var(--muted);font-size:12px">Build the year-over-year new user retention view to measure progress toward the +5% retention goal</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- DASHBOARDS -->
-  <div id="dashboards"></div>
-  <div class="section-head"><span>📊</span> Your Amplitude Dashboards</div>
-  <div class="qlinks" style="margin-bottom:20px">
-    <a href="https://app.amplitude.com/analytics/pgatour/dashboard/d3goyvhi" target="_blank" class="qlink">
-      <span class="qlink-icon">🏌️</span>
-      <div><div class="qlink-label">PGA Tour Pass</div><div class="qlink-sub">Membership & engagement</div></div>
-    </a>
-    <a href="https://app.amplitude.com/analytics/pgatour/dashboard/wbemupda" target="_blank" class="qlink">
-      <span class="qlink-icon">🎯</span>
-      <div><div class="qlink-label">2026 Digital Goals</div><div class="qlink-sub">Matt Mullen's KPI dashboard</div></div>
-    </a>
-    <a href="https://app.amplitude.com/audiences/pgatour/syncs" target="_blank" class="qlink">
-      <span class="qlink-icon">🔄</span>
-      <div><div class="qlink-label">Audience Syncs</div><div class="qlink-sub">Active CDP destinations</div></div>
-    </a>
-    <a href="https://app.amplitude.com/analytics/pgatour/chart/17f9mgiz/edit/h61lj5zg" target="_blank" class="qlink">
-      <span class="qlink-icon">📈</span>
-      <div><div class="qlink-label">New User Retention</div><div class="qlink-sub">YoY comparison</div></div>
-    </a>
-    <a href="https://app.amplitude.com/analytics/pgatour" target="_blank" class="qlink">
-      <span class="qlink-icon">📊</span>
-      <div><div class="qlink-label">All Analytics</div><div class="qlink-sub">pgatour instance</div></div>
-    </a>
-    <a href="https://app.amplitude.com/audiences/pgatour/cohort/aqj2n8hg/details" target="_blank" class="qlink">
-      <span class="qlink-icon">👥</span>
-      <div><div class="qlink-label">Cohorts & Audiences</div><div class="qlink-sub">Predictive + behavioral</div></div>
-    </a>
-  </div>
-
-  <!-- MEETINGS & DECKS -->
-  <div id="meetings"></div>
-  <div class="section-head"><span>🎥</span> Recent Meetings & Shared Decks</div>
-  <div class="g2" style="margin-bottom:20px">
-    <div class="card">
-      <div class="card-title">📋 Recent Sessions</div>
+  </section>
+  <section id="team">
+    <div class="section-title">Team</div>
+    <div class="team-cols">
       <div>
-        <div class="meeting-row">
-          <div class="md-box"><div class="md-mon">APR</div><div class="md-day">3</div></div>
-          <div>
-            <div class="m-title">Activation Strategy Working Session</div>
-            <div class="m-sub">Evan Cohen, Sean Halbmaier, Matt Mullen + Amplitude team</div>
-          </div>
-          <div class="m-link"><a href="https://notes.granola.ai/t/f8ea7d8a-5ea5-412e-8001-1f51ca3f732e-008umkv4" target="_blank" class="btn btn-ghost">Notes →</a></div>
-        </div>
-        <div class="meeting-row">
-          <div class="md-box"><div class="md-mon">MAR</div><div class="md-day">23</div></div>
-          <div>
-            <div class="m-title">Teams Integration Session</div>
-            <div class="m-sub">Scott Colter, Keaton Tucker + Amplitude engineering</div>
-          </div>
-          <div class="m-link"><a href="https://notes.granola.ai/d/aa5b7629-84bd-43f2-bd43-2baf3a7c1660" target="_blank" class="btn btn-ghost">Notes →</a></div>
-        </div>
-        <div class="meeting-row">
-          <div class="md-box"><div class="md-mon">MAR</div><div class="md-day">18</div></div>
-          <div>
-            <div class="m-title">Monthly Strategic Sync</div>
-            <div class="m-sub">Full team · Product, data, advertising + Amplitude</div>
-          </div>
-          <div class="m-link"><a href="https://notes.granola.ai/d/75e4d561-792e-4a8f-9a12-9f0480d9cbbd" target="_blank" class="btn btn-ghost">Notes →</a></div>
-        </div>
-        <div class="meeting-row">
-          <div class="md-box"><div class="md-mon">MAR</div><div class="md-day">6</div></div>
-          <div>
-            <div class="m-title">2026 KPI Planning Session</div>
-            <div class="m-sub">Matt Mullen + Kiley — built the 2026 Digital Goals dashboard</div>
-          </div>
-          <div class="m-link"><a href="https://notes.granola.ai/d/461609b9-e0b8-46c2-bcc8-e1ff8f532e73" target="_blank" class="btn btn-ghost">Notes →</a></div>
-        </div>
+        <div class="team-section-title">Their Team — PGA TOUR</div>
+        <div class="person-card"><div class="avatar" style="background:linear-gradient(135deg,#1a3a6b,#0d2348)">EC</div><div><div class="person-name">Evan Cohen</div><div class="person-title">Sr. Manager, Marketing Ops &amp; Fan Development</div><div class="person-email"><a href="mailto:evancohen@pgatourhq.com">evancohen@pgatourhq.com</a></div></div></div>
+        <div class="person-card"><div class="avatar" style="background:linear-gradient(135deg,#1e3a5f,#0f2942)">MM</div><div><div class="person-name">Matt Mullen</div><div class="person-title">Director, Product Management</div><div class="person-email"><a href="mailto:mattmullen@pgatourhq.com">mattmullen@pgatourhq.com</a></div></div></div>
+        <div class="person-card"><div class="avatar" style="background:linear-gradient(135deg,#1a3d5c,#112b42)">SC</div><div><div class="person-name">Scott Colter</div><div class="person-title">Director, Ad Product &amp; Technology</div><div class="person-email"><a href="mailto:scottcolter@pgatourhq.com">scottcolter@pgatourhq.com</a></div></div></div>
+        <div class="person-card"><div class="avatar" style="background:linear-gradient(135deg,#243b55,#141e30)">KS</div><div><div class="person-name">Kacie Shea</div><div class="person-title">Data Analyst</div><div class="person-email"><a href="mailto:kacieshea@pgatourhq.com">kacieshea@pgatourhq.com</a></div></div></div>
+        <div class="person-card"><div class="avatar" style="background:linear-gradient(135deg,#1c3a5c,#0d2138)">SH</div><div><div class="person-name">Stephen Hill</div><div class="person-title">Sr. Manager, Audience Activation</div><div class="person-email"><a href="mailto:stephenhill@pgatourhq.com">stephenhill@pgatourhq.com</a></div></div></div>
+        <div class="person-card"><div class="avatar" style="background:linear-gradient(135deg,#1e3355,#0f1f38)">JC</div><div><div class="person-name">Jey Choi</div><div class="person-title">Senior Product Manager, Mobile</div><div class="person-email"><a href="mailto:jeychoi@pgatourhq.com">jeychoi@pgatourhq.com</a></div></div></div>
       </div>
-    </div>
-    <div class="card">
-      <div class="card-title">📊 Shared Documents</div>
       <div>
-        <div class="meeting-row">
-          <div class="md-box" style="background:rgba(56,217,169,0.1)"><div class="md-mon" style="color:var(--green)">LIVE</div><div class="md-day" style="font-size:16px">✓</div></div>
-          <div>
-            <div class="m-title">2026 Digital KPI Dashboard</div>
-            <div class="m-sub">Amplitude dashboard tracking all 2026 goals</div>
-          </div>
-          <div class="m-link"><a href="https://app.amplitude.com/analytics/pgatour/dashboard/wbemupda" target="_blank" class="btn btn-green">Open →</a></div>
-        </div>
-        <div class="meeting-row">
-          <div class="md-box" style="background:rgba(91,106,240,0.1)"><div class="md-mon" style="color:#a0aaff">DECK</div><div class="md-day" style="font-size:16px">📑</div></div>
-          <div>
-            <div class="m-title">Activation + Journey Orchestration Overview</div>
-            <div class="m-sub">What PGA Tour has active today + what's next</div>
-          </div>
-          <div class="m-link"><a href="https://docs.google.com/presentation/d/1DskTK14QeIoozzqAiw-btM15NeCC3LF_YJjkSMzSvr0/edit" target="_blank" class="btn btn-ghost">Open →</a></div>
-        </div>
-        <div class="meeting-row">
-          <div class="md-box" style="background:rgba(212,168,67,0.1)"><div class="md-mon" style="color:var(--gold)">PLAN</div><div class="md-day" style="font-size:16px">📋</div></div>
-          <div>
-            <div class="m-title">PGA Tour Success Plan</div>
-            <div class="m-sub">Joint priorities, milestones, and 2026 roadmap</div>
-          </div>
-          <div class="m-link"><a href="https://docs.google.com/spreadsheets/d/1JHyCxpWaaAj4LtcC6efMgvRbVsrprfvkGdixATTXZaE/edit" target="_blank" class="btn btn-ghost">Open →</a></div>
-        </div>
-        <div class="meeting-row">
-          <div class="md-box" style="background:rgba(168,85,247,0.1)"><div class="md-mon" style="color:#c084fc">WIN</div><div class="md-day" style="font-size:16px">🏆</div></div>
-          <div>
-            <div class="m-title">Amplitude All Hands — PGA Tour Feature</div>
-            <div class="m-sub">Company spotlight on PGA Tour's AI use cases (slides 21–26)</div>
-          </div>
-          <div class="m-link"><a href="https://docs.google.com/presentation/d/1jL5FueIJyDmOaE_iDCQ453c1TERHC53n37GfamzhZxY/edit#slide=id.g3706d66ecda_0_522" target="_blank" class="btn btn-ghost">Open →</a></div>
-        </div>
+        <div class="team-section-title">Your Amplitude Team</div>
+        <div class="person-card"><div class="avatar" style="background:linear-gradient(135deg,#5b6af0,#7c3aed)">KS</div><div><div class="person-name">Kiley Sheehy</div><div class="person-title">Senior Technical Success Manager</div><div class="person-email"><a href="mailto:kiley.sheehy@amplitude.com">kiley.sheehy@amplitude.com</a></div></div></div>
+        <div class="person-card"><div class="avatar" style="background:linear-gradient(135deg,#4f5bd5,#6c31d4)">DK</div><div><div class="person-name">David Kim</div><div class="person-title">Account Executive</div><div class="person-email"><a href="mailto:david.kim@amplitude.com">david.kim@amplitude.com</a></div></div></div>
+        <div class="person-card"><div class="avatar" style="background:linear-gradient(135deg,#4355c9,#5a28c0)">NS</div><div><div class="person-name">Nitin Sethi</div><div class="person-title">Solutions Engineer</div><div class="person-email"><a href="mailto:nitin.sethi@amplitude.com">nitin.sethi@amplitude.com</a></div></div></div>
+        <div class="person-card"><div class="avatar" style="background:linear-gradient(135deg,#3d4fc4,#5121bb)">AY</div><div><div class="person-name">Adam Yapkowitz</div><div class="person-title">VP, Account Executive (Southeast)</div><div class="person-email"><a href="mailto:adam.yapkowitz@amplitude.com">adam.yapkowitz@amplitude.com</a></div></div></div>
+        <div class="person-card"><div class="avatar" style="background:linear-gradient(135deg,#384bc0,#4c1eb7)">SC</div><div><div class="person-name">Sam Conde</div><div class="person-title">Solutions Engineer</div><div class="person-email"><a href="mailto:sam.conde@amplitude.com">sam.conde@amplitude.com</a></div></div></div>
       </div>
     </div>
-  </div>
-
-  <!-- WINS -->
-  <div id="wins"></div>
-  <div class="section-head"><span>🏆</span> What We've Built Together</div>
-  <div class="g2" style="margin-bottom:20px">
-    <div style="display:flex;flex-direction:column;gap:12px">
-      <div class="win">
-        <div class="win-icon">🏆</div>
-        <div>
-          <div class="win-title">Featured at Amplitude All Hands — AI Win</div>
-          <div class="win-desc">PGA Tour's AI use cases were spotlighted company-wide at Amplitude's April 2026 All Hands as a customer success story — a testament to the team's early and meaningful adoption of AI-powered analytics.</div>
-        </div>
-      </div>
-      <div class="win">
-        <div class="win-icon">🏌️</div>
-        <div>
-          <div class="win-title">Players Championship — 112K Authenticated Users</div>
-          <div class="win-desc">The PGA Tour Pass launch in March 2026 drove 112,000 authenticated users during The Players Championship. Amplitude provided real-time visibility into the full engagement and authentication funnel throughout the event.</div>
-        </div>
-      </div>
-      <div class="win">
-        <div class="win-icon">📊</div>
-        <div>
-          <div class="win-title">2026 Digital Goals Dashboard — Live</div>
-          <div class="win-desc">Built with Matt Mullen — a single Amplitude dashboard tracking all of PGA Tour's 2026 digital KPIs, from authenticated user growth to content engagement and membership metrics.</div>
-        </div>
-      </div>
+  </section>
+  <section id="resources">
+    <div class="section-title">Resources</div>
+    <div class="resource-grid">
+      <a class="resource-card" href="slack://channel?id=C09T0RHSHAS" target="_blank"><div class="resource-icon">💬</div><div><div class="resource-label">Slack Channel</div><div class="resource-sub">#PGA TOUR, Inc</div></div></a>
+      <a class="resource-card" href="https://app.amplitude.com/analytics/pgatour/" target="_blank"><div class="resource-icon">🔗</div><div><div class="resource-label">Open in Amplitude</div><div class="resource-sub">PGA TOUR workspace</div></div></a>
+      <a class="resource-card" href="https://gethelp.amplitude.com/hc/en-us?siteLocation=nav" target="_blank"><div class="resource-icon">🛙</div><div><div class="resource-label">Help Center</div><div class="resource-sub">gethelp.amplitude.com</div></div></a>
+      <a class="resource-card" href="https://gethelp.amplitude.com/hc/en-us/requests/new" target="_blank"><div class="resource-icon">🎫</div><div><div class="resource-label">File a Support Ticket</div><div class="resource-sub">Submit a request</div></div></a>
+      <a class="resource-card" href="https://amplitude.com/docs" target="_blank"><div class="resource-icon">📚</div><div><div class="resource-label">Amplitude Docs</div><div class="resource-sub">amplitude.com/docs</div></div></a>
     </div>
-    <div style="display:flex;flex-direction:column;gap:12px">
-      <div class="win">
-        <div class="win-icon">📲</div>
-        <div>
-          <div class="win-title">40–50 Personalized Push Notification Campaigns/Month</div>
-          <div class="win-desc">PGA Tour runs 40–50 active Amplitude-powered audience segments monthly to Airship — covering player-following fans, tournament-specific audiences, re-engagement cohorts, and geographic segments. A mature, high-impact personalization program.</div>
-        </div>
-      </div>
-      <div class="win">
-        <div class="win-icon">🤖</div>
-        <div>
-          <div class="win-title">Andy Panjic — AI Power User & Internal Champion</div>
-          <div class="win-desc">Andy Panjic has become PGA Tour's internal AI champion, driving Amplitude AI adoption across the product team. Regularly pressure-testing new features and leading the charge on AI-powered analysis workflows.</div>
-        </div>
-      </div>
-      <div class="win">
-        <div class="win-icon">🎯</div>
-        <div>
-          <div class="win-title">6 Predictive Cohorts Built & Ready</div>
-          <div class="win-desc">PGA Tour has six prediction cohorts fully built in Amplitude — including Authentication Probability and Follow Player Probability — representing a ready-to-use predictive personalization layer that hasn't yet been fully activated.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- WHAT'S NEW -->
-  <div id="news"></div>
-  <div class="section-head"><span>📣</span> What's New at Amplitude — Relevant to PGA Tour</div>
-  <div class="g3" style="margin-bottom:20px">
-    <a href="https://amplitude.com/blog/journey-orchestration" target="_blank" class="news-card">
-      <div class="news-tag">🚀 New Product</div>
-      <div class="news-title">Journey Orchestration</div>
-      <div class="news-desc">Build multi-step behavioral campaigns triggered by real-time events — player leaderboard changes, tournament starts, PGA Tour Pass onboarding. A compelling addition to your Braze workflow.</div>
-    </a>
-    <a href="https://amplitude.com/blog/ai-analytics" target="_blank" class="news-card">
-      <div class="news-tag">🤖 AI Feature</div>
-      <div class="news-title">Ask Amplitude & AI Insights</div>
-      <div class="news-desc">Natural language analytics — ask "which player pages drive the most app opens?" and get instant answers. Andy is already leading the way; let's get the full team using it.</div>
-    </a>
-    <a href="https://amplitude.com/blog/cdp-activation" target="_blank" class="news-card">
-      <div class="news-tag">🎯 Activation</div>
-      <div class="news-title">Predictive Cohort Activation</div>
-      <div class="news-desc">Your 6 prediction cohorts are built and waiting. Activating them means Airship and Braze automatically receive your highest-probability audiences — authentication, player-following, re-engagement — in real time.</div>
-    </a>
-    <a href="https://amplitude.com/blog" target="_blank" class="news-card">
-      <div class="news-tag">📖 Blog</div>
-      <div class="news-title">Sports & Media Analytics Benchmarks</div>
-      <div class="news-desc">Amplitude's latest research on subscription sports platforms, authenticated user benchmarks, and content engagement patterns — useful context for PGA Tour Pass goals and 2026 planning.</div>
-    </a>
-    <a href="https://academy.amplitude.com" target="_blank" class="news-card">
-      <div class="news-tag">🎓 Academy</div>
-      <div class="news-title">Amplitude Certification</div>
-      <div class="news-desc">Free self-paced training and certification for your full team. Great for onboarding new users and leveling up your data team's Amplitude fluency.</div>
-    </a>
-    <a href="https://amplitude.com/customers" target="_blank" class="news-card">
-      <div class="news-tag">🌟 Customer Stories</div>
-      <div class="news-title">See How Others Are Using Amplitude</div>
-      <div class="news-desc">Sports, media, and streaming case studies from Amplitude customers — useful for benchmarking engagement, retention, and personalization strategies against peers.</div>
-    </a>
-  </div>
-
-  <!-- TEAM -->
-  <div id="team"></div>
-  <div class="section-head"><span>👥</span> Our Teams</div>
-  <div style="margin-bottom:8px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.7px;color:var(--muted)">PGA TOUR</div>
-  <div class="people-grid" style="margin-bottom:20px">
-    <div class="person">
-      <div class="av av-pga">EC</div>
-      <div>
-        <div class="pname">Evan Cohen</div>
-        <div class="ptitle">Fan Development Sr. Manager, Marketing Operations</div>
-        <div class="plinks"><a href="mailto:evancohen@pgatourhq.com" class="plink">✉️ evancohen@pgatourhq.com</a></div>
-        <span class="ptag ptag-gold">Marketing & Activation</span>
-      </div>
-    </div>
-    <div class="person">
-      <div class="av av-pga">MM</div>
-      <div>
-        <div class="pname">Matt Mullen</div>
-        <div class="ptitle">Director, Product Management</div>
-        <div class="plinks"><a href="mailto:mattmullen@pgatourhq.com" class="plink">✉️ mattmullen@pgatourhq.com</a></div>
-        <span class="ptag ptag-teal">Product</span>
-      </div>
-    </div>
-    <div class="person">
-      <div class="av av-pga">SH</div>
-      <div>
-        <div class="pname">Sean Halbmaier</div>
-        <div class="ptitle">VP, Advanced Advertising</div>
-        <div class="plinks"><a href="mailto:seanhalbmaier@pgatourhq.com" class="plink">✉️ seanhalbmaier@pgatourhq.com</a></div>
-        <span class="ptag ptag-gold">Advertising</span>
-      </div>
-    </div>
-    <div class="person">
-      <div class="av av-pga">SC</div>
-      <div>
-        <div class="pname">Scott Colter</div>
-        <div class="ptitle">Director, Ad Product & Technology</div>
-        <div class="plinks"><a href="mailto:scottcolter@pgatourhq.com" class="plink">✉️ scottcolter@pgatourhq.com</a></div>
-        <span class="ptag ptag-blue">Technical</span>
-      </div>
-    </div>
-    <div class="person">
-      <div class="av av-pga">AP</div>
-      <div>
-        <div class="pname">Andy Panjic</div>
-        <div class="ptitle">Product Manager</div>
-        <div class="plinks"><a href="mailto:andypanjic@pgatourhq.com" class="plink">✉️ andypanjic@pgatourhq.com</a></div>
-        <span class="ptag ptag-teal">AI Champion</span>
-      </div>
-    </div>
-    <div class="person">
-      <div class="av av-pga">SHi</div>
-      <div>
-        <div class="pname">Stephen Hill</div>
-        <div class="ptitle">Sr. Manager, Audience Activation</div>
-        <div class="plinks"><a href="mailto:stephenhill@pgatourhq.com" class="plink">✉️ stephenhill@pgatourhq.com</a></div>
-        <span class="ptag ptag-blue">CDP / Activation</span>
-      </div>
-    </div>
-    <div class="person">
-      <div class="av av-pga">KS</div>
-      <div>
-        <div class="pname">Kacie Shea</div>
-        <div class="ptitle">Data Analyst</div>
-        <div class="plinks"><a href="mailto:kacieshea@pgatourhq.com" class="plink">✉️ kacieshea@pgatourhq.com</a></div>
-        <span class="ptag ptag-blue">Analytics</span>
-      </div>
-    </div>
-    <div class="person">
-      <div class="av av-pga">MW</div>
-      <div>
-        <div class="pname">Matt Warnock</div>
-        <div class="ptitle">Strategy & Ops Sr. Director, Advertising</div>
-        <div class="plinks"><a href="mailto:mattwarnock@pgatourhq.com" class="plink">✉️ mattwarnock@pgatourhq.com</a></div>
-        <span class="ptag ptag-gold">Advertising Strategy</span>
-      </div>
-    </div>
-  </div>
-
-  <div style="margin-bottom:8px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.7px;color:var(--muted)">Amplitude</div>
-  <div class="people-grid" style="margin-bottom:20px">
-    <div class="person">
-      <div class="av av-amp">KS</div>
-      <div>
-        <div class="pname">Kiley Sheehy</div>
-        <div class="ptitle">Customer Success Manager</div>
-        <div class="plinks"><a href="mailto:kiley.sheehy@amplitude.com" class="plink">✉️ kiley.sheehy@amplitude.com</a></div>
-        <span class="ptag ptag-teal">Your CSM</span>
-      </div>
-    </div>
-    <div class="person">
-      <div class="av av-amp">SC</div>
-      <div>
-        <div class="pname">Sam Conde</div>
-        <div class="ptitle">Customer Success Architect</div>
-        <div class="plinks"><a href="mailto:sam.conde@amplitude.com" class="plink">✉️ sam.conde@amplitude.com</a></div>
-        <span class="ptag ptag-blue">Technical Delivery</span>
-      </div>
-    </div>
-    <div class="person">
-      <div class="av av-amp">SK</div>
-      <div>
-        <div class="pname">Shessvy Kelly</div>
-        <div class="ptitle">Sr. Solutions Engineer</div>
-        <div class="plinks"><a href="mailto:shessvy.lepekelly@amplitude.com" class="plink">✉️ shessvy.lepekelly@amplitude.com</a></div>
-        <span class="ptag ptag-blue">Solutions Engineering</span>
-      </div>
-    </div>
-    <div class="person">
-      <div class="av av-amp">NS</div>
-      <div>
-        <div class="pname">Nitin Sethi</div>
-        <div class="ptitle">Solutions Consultant</div>
-        <div class="plinks"><a href="mailto:nitin.sethi@amplitude.com" class="plink">✉️ nitin.sethi@amplitude.com</a></div>
-        <span class="ptag ptag-blue">JO & AI Strategy</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- RESOURCES -->
-  <div id="resources"></div>
-  <div class="section-head"><span>🔗</span> Resources</div>
-  <div class="qlinks" style="margin-bottom:20px">
-    <a href="https://amplitude.com/support" target="_blank" class="qlink">
-      <span class="qlink-icon">🎫</span>
-      <div><div class="qlink-label">File a Support Ticket</div><div class="qlink-sub">amplitude.com/support</div></div>
-    </a>
-    <a href="https://help.amplitude.com" target="_blank" class="qlink">
-      <span class="qlink-icon">📖</span>
-      <div><div class="qlink-label">Help Center</div><div class="qlink-sub">help.amplitude.com</div></div>
-    </a>
-    <a href="https://academy.amplitude.com" target="_blank" class="qlink">
-      <span class="qlink-icon">🎓</span>
-      <div><div class="qlink-label">Amplitude Academy</div><div class="qlink-sub">Free training & certs</div></div>
-    </a>
-    <a href="https://amplitude.com/blog" target="_blank" class="qlink">
-      <span class="qlink-icon">✍️</span>
-      <div><div class="qlink-label">Blog & Research</div><div class="qlink-sub">Best practices & benchmarks</div></div>
-    </a>
-    <a href="https://amplitude.com/customers" target="_blank" class="qlink">
-      <span class="qlink-icon">🌟</span>
-      <div><div class="qlink-label">Customer Stories</div><div class="qlink-sub">Sports, media & streaming</div></div>
-    </a>
-    <a href="https://amplitude.com/changelog" target="_blank" class="qlink">
-      <span class="qlink-icon">🆕</span>
-      <div><div class="qlink-label">Product Changelog</div><div class="qlink-sub">What's new in Amplitude</div></div>
-    </a>
-  </div>
-
+  </section>
 </div>
-
-<!-- FOOTER -->
-<div class="footer">
-  <p>PGA TOUR × Amplitude Partnership Hub &nbsp;·&nbsp; Questions? Reach out to <a href="mailto:kiley.sheehy@amplitude.com">Kiley Sheehy</a> &nbsp;·&nbsp; <span class="pill pill-green" style="display:inline-flex"><span class="pulse"></span> Updated April 2026</span></p>
-</div>
-
-<script>
-  document.querySelectorAll('.nav a').forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      document.querySelectorAll('.nav a').forEach(a => a.classList.remove('active'));
-      link.classList.add('active');
-      const id = link.getAttribute('href').replace('#','');
-      const el = document.getElementById(id);
-      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-  });
-  const ids = ['goals','initiatives','calendar','dashboards','meetings','wins','news','team','resources'];
-  window.addEventListener('scroll', () => {
-    let cur = '';
-    ids.forEach(id => { const el = document.getElementById(id); if (el && el.getBoundingClientRect().top < 130) cur = id; });
-    document.querySelectorAll('.nav a').forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#'+cur));
-  });
-</script>
 </body>
 </html>
