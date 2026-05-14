@@ -11,7 +11,6 @@
       --amp-blue: #1652f0;
       --amp-dark: #0d0d1a;
       --pga-gold: #c9a84c;
-      --pga-gold-light: #e8c97a;
       --bg: #f5f6f8;
       --white: #ffffff;
       --text: #1a1a2e;
@@ -30,7 +29,7 @@
       min-height: 100vh;
     }
 
-    /* ─── HERO ─── */
+    /* HERO */
     .hero {
       background: linear-gradient(135deg, #0d0d1a 0%, #1a1a3e 50%, #0d1a2e 100%);
       color: white;
@@ -38,7 +37,6 @@
       position: relative;
       overflow: hidden;
     }
-
     .hero::before {
       content: '';
       position: absolute;
@@ -47,7 +45,6 @@
       background: radial-gradient(circle, rgba(201,168,76,0.15) 0%, transparent 70%);
       border-radius: 50%;
     }
-
     .hero::after {
       content: '';
       position: absolute;
@@ -56,360 +53,183 @@
       background: radial-gradient(circle, rgba(22,82,240,0.2) 0%, transparent 70%);
       border-radius: 50%;
     }
-
-    .hero-inner {
-      max-width: 900px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .logos {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      margin-bottom: 36px;
-    }
-
+    .hero-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
+    .logos { display: flex; align-items: center; gap: 20px; margin-bottom: 36px; }
     .logo-pill {
       background: rgba(255,255,255,0.1);
       border: 1px solid rgba(255,255,255,0.15);
       border-radius: 8px;
       padding: 8px 18px;
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+      font-size: 14px; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
     }
-
     .logo-pill.pga { color: var(--pga-gold); border-color: rgba(201,168,76,0.4); }
     .logo-pill.amp { color: #7eb3ff; border-color: rgba(22,82,240,0.4); }
-
-    .logo-x {
-      color: rgba(255,255,255,0.3);
-      font-size: 18px;
-      font-weight: 300;
-    }
-
+    .logo-x { color: rgba(255,255,255,0.3); font-size: 18px; }
     .hero h1 {
       font-size: clamp(28px, 5vw, 44px);
-      font-weight: 800;
-      line-height: 1.15;
-      margin-bottom: 20px;
-      letter-spacing: -0.02em;
+      font-weight: 800; line-height: 1.15;
+      margin-bottom: 20px; letter-spacing: -0.02em;
     }
-
     .hero h1 span { color: var(--pga-gold); }
-
-    .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 24px;
-      margin-top: 28px;
-    }
-
-    .meta-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 15px;
-      color: rgba(255,255,255,0.75);
-    }
-
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 24px; margin-top: 28px; }
+    .meta-item { display: flex; align-items: center; gap: 8px; font-size: 15px; color: rgba(255,255,255,0.75); }
     .meta-icon {
       width: 32px; height: 32px;
       background: rgba(255,255,255,0.1);
       border-radius: 8px;
       display: flex; align-items: center; justify-content: center;
-      font-size: 15px;
-      flex-shrink: 0;
+      font-size: 15px; flex-shrink: 0;
     }
+    .hero-divider { height: 4px; background: linear-gradient(90deg, var(--pga-gold) 0%, var(--amp-blue) 100%); }
 
-    .hero-divider {
-      height: 4px;
-      background: linear-gradient(90deg, var(--pga-gold) 0%, var(--amp-blue) 100%);
+    /* PRE-WORK BANNER */
+    .prework-banner {
+      background: #fffbeb;
+      border-bottom: 1px solid #fde68a;
+      padding: 16px 40px;
     }
-
-    /* ─── MAIN CONTENT ─── */
-    .content {
+    .prework-inner {
       max-width: 900px;
       margin: 0 auto;
-      padding: 48px 24px 80px;
-    }
-
-    /* ─── SECTION LABEL ─── */
-    .section-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 24px;
-    }
-
-    .section-label::after {
-      content: '';
-      display: block;
-      width: 40px;
-      height: 1px;
-      background: var(--border);
-    }
-
-    /* ─── TIMELINE ─── */
-    .timeline {
-      position: relative;
       display: flex;
-      flex-direction: column;
-      gap: 0;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 13.5px;
+      color: #78350f;
+      line-height: 1.6;
     }
+    .prework-icon {
+      font-size: 16px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .prework-inner strong { color: #92400e; }
 
+    /* CONTENT */
+    .content { max-width: 900px; margin: 0 auto; padding: 48px 24px 80px; }
+    .section-label {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--text-muted); margin-bottom: 24px;
+    }
+    .section-label::after { content: ''; display: block; width: 40px; height: 1px; background: var(--border); }
+
+    /* TIMELINE */
+    .timeline { position: relative; display: flex; flex-direction: column; }
     .timeline::before {
       content: '';
-      position: absolute;
-      left: 88px;
-      top: 0; bottom: 0;
-      width: 2px;
-      background: var(--timeline-line);
-      z-index: 0;
+      position: absolute; left: 88px; top: 0; bottom: 0;
+      width: 2px; background: var(--timeline-line); z-index: 0;
     }
-
-    /* ─── BLOCK ─── */
-    .block {
-      display: flex;
-      gap: 0;
-      position: relative;
-    }
-
+    .block { display: flex; position: relative; }
     .block + .block { margin-top: 4px; }
 
     .time-col {
-      width: 88px;
-      flex-shrink: 0;
-      padding-right: 28px;
-      padding-top: 22px;
-      text-align: right;
+      width: 88px; flex-shrink: 0;
+      padding-right: 28px; padding-top: 22px; text-align: right;
     }
-
-    .time-text {
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--text-muted);
-      line-height: 1.3;
-      white-space: nowrap;
-    }
+    .time-text { font-size: 12px; font-weight: 600; color: var(--text-muted); line-height: 1.3; white-space: nowrap; }
 
     .dot-col {
-      flex-shrink: 0;
-      width: 20px;
-      position: relative;
-      display: flex;
-      align-items: flex-start;
-      padding-top: 24px;
-      z-index: 1;
+      flex-shrink: 0; width: 20px; position: relative;
+      display: flex; align-items: flex-start;
+      padding-top: 24px; z-index: 1;
     }
-
     .dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      border: 2px solid var(--white);
-      flex-shrink: 0;
-      margin-top: 5px;
-      box-shadow: 0 0 0 2px var(--timeline-line);
+      width: 12px; height: 12px; border-radius: 50%;
+      border: 2px solid var(--white); flex-shrink: 0;
+      margin-top: 5px; box-shadow: 0 0 0 2px var(--timeline-line);
     }
 
-    .block.is-break .dot {
-      background: #f3f4f6;
-      box-shadow: 0 0 0 2px #d1d5db;
-    }
-
-    .block.is-lunch .dot {
-      background: var(--pga-gold);
-      box-shadow: 0 0 0 2px rgba(201,168,76,0.3);
-    }
-
-    .card-col {
-      flex: 1;
-      padding: 0 0 0 20px;
-      padding-bottom: 20px;
-    }
+    .card-col { flex: 1; padding: 0 0 20px 20px; }
 
     .card {
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 20px 24px;
-      position: relative;
       transition: box-shadow 0.15s;
     }
+    .card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
 
-    .card:hover {
-      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
-    }
-
-    /* color left accent per section */
-    .card.accent-goals    { border-left: 3px solid #6366f1; }
-    .card.accent-framework { border-left: 3px solid #8b5cf6; }
-    .card.accent-feature  { border-left: 3px solid var(--amp-blue); }
-    .card.accent-template { border-left: 3px solid #0ea5e9; }
-    .card.accent-live     { border-left: 3px solid #10b981; }
-    .card.accent-cdp      { border-left: 3px solid #f59e0b; }
-    .card.accent-ai       { border-left: 3px solid #ec4899; }
-    .card.accent-next     { border-left: 3px solid var(--pga-gold); }
-    .card.accent-break    { border-left: 3px solid #e5e7eb; background: #fafafa; }
-    .card.accent-lunch    { border-left: 3px solid var(--pga-gold); background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); }
+    .card.accent-block1  { border-left: 3px solid #6366f1; }
+    .card.accent-hub     { border-left: 3px solid var(--amp-blue); }
+    .card.accent-build   { border-left: 3px solid #10b981; }
+    .card.accent-adobe   { border-left: 3px solid #ec4899; }
+    .card.accent-next    { border-left: 3px solid var(--pga-gold); }
+    .card.accent-break   { border-left: 3px solid #e5e7eb; background: #fafafa; }
+    .card.accent-lunch   { border-left: 3px solid var(--pga-gold); background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); }
 
     .card-header {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 4px;
+      display: flex; align-items: flex-start;
+      justify-content: space-between; gap: 12px; margin-bottom: 4px;
     }
-
-    .card-title {
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--text);
-      line-height: 1.35;
-    }
-
-    .card.accent-break .card-title,
-    .card.accent-lunch .card-title {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--text-muted);
-    }
-
-    .card.accent-lunch .card-title { color: #92400e; }
+    .card-title { font-size: 16px; font-weight: 700; color: var(--text); line-height: 1.35; }
+    .card.accent-break .card-title { font-size: 14px; font-weight: 600; color: var(--text-muted); }
+    .card.accent-lunch .card-title { font-size: 14px; font-weight: 600; color: #92400e; }
 
     .duration-badge {
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--text-muted);
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 3px 9px;
-      white-space: nowrap;
-      flex-shrink: 0;
+      font-size: 11px; font-weight: 600; color: var(--text-muted);
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 20px; padding: 3px 9px;
+      white-space: nowrap; flex-shrink: 0;
     }
 
-    .presenter {
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-top: 6px;
-      font-weight: 500;
-    }
-
-    .presenter a {
-      color: var(--amp-blue);
-      text-decoration: none;
-      font-weight: 600;
-    }
-
+    .presenter { font-size: 13px; color: var(--text-muted); margin-top: 6px; font-weight: 500; }
+    .presenter a { color: var(--amp-blue); text-decoration: none; font-weight: 600; }
     .presenter a:hover { text-decoration: underline; }
 
-    .bullets {
-      margin-top: 14px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
+    /* SUB-SECTIONS within a card */
+    .sub-section { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--border); }
+    .sub-section:first-child { margin-top: 14px; padding-top: 0; border-top: none; }
+    .sub-title {
+      font-size: 13px; font-weight: 700; color: var(--text);
+      margin-bottom: 4px; display: flex; align-items: center; gap: 8px;
+    }
+    .sub-meta { font-size: 12px; color: var(--text-muted); margin-bottom: 10px; font-style: italic; }
+    .sub-note {
+      font-size: 12px; color: var(--text-muted);
+      background: rgba(0,0,0,0.03);
+      border: 1px solid var(--border);
+      border-radius: 6px; padding: 8px 12px;
+      margin-bottom: 10px; line-height: 1.5;
     }
 
+    .bullets { margin-top: 12px; display: flex; flex-direction: column; gap: 6px; }
     .bullet {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 13.5px;
-      line-height: 1.5;
-      color: #374151;
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 13.5px; line-height: 1.5; color: #374151;
     }
+    .bullet::before { content: '\203A'; color: var(--text-muted); font-size: 16px; line-height: 1.35; flex-shrink: 0; }
 
-    .bullet::before {
-      content: '›';
-      color: var(--text-muted);
-      font-size: 16px;
-      line-height: 1.35;
-      flex-shrink: 0;
-    }
-
-    .sub-bullets {
-      margin-top: 6px;
-      padding-left: 16px;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
+    .sub-bullets { margin-top: 6px; padding-left: 16px; display: flex; flex-direction: column; gap: 4px; }
     .sub-bullet {
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-      font-size: 12.5px;
-      line-height: 1.5;
-      color: #6b7280;
+      display: flex; align-items: flex-start; gap: 8px;
+      font-size: 12.5px; line-height: 1.5; color: #6b7280;
     }
+    .sub-bullet::before { content: '\2013'; flex-shrink: 0; color: #d1d5db; }
 
-    .sub-bullet::before {
-      content: '–';
-      flex-shrink: 0;
-      color: #d1d5db;
-    }
-
-    .note-box {
-      margin-top: 14px;
+    .goal-box {
+      margin-top: 12px;
       background: rgba(22,82,240,0.05);
       border: 1px solid rgba(22,82,240,0.12);
-      border-radius: 8px;
-      padding: 12px 16px;
-      font-size: 12.5px;
-      color: #374151;
-      line-height: 1.6;
+      border-radius: 8px; padding: 10px 14px;
+      font-size: 12.5px; color: #374151; line-height: 1.6;
     }
+    .goal-box strong { color: var(--amp-blue); }
 
-    .note-box strong { color: var(--amp-blue); }
-
-    /* ─── SECTION DIVIDER ─── */
-    .section-divider {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin: 32px 0 28px;
-    }
-
-    .section-divider-line {
-      flex: 1;
-      height: 1px;
-      background: var(--border);
-    }
-
-    .section-divider-label {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      white-space: nowrap;
-    }
-
-    /* ─── FOOTER ─── */
+    /* FOOTER */
     .footer {
       background: var(--amp-dark);
       color: rgba(255,255,255,0.5);
-      text-align: center;
-      font-size: 13px;
-      padding: 28px 24px;
+      text-align: center; font-size: 13px; padding: 28px 24px;
     }
-
     .footer strong { color: rgba(255,255,255,0.8); }
 
-    /* ─── RESPONSIVE ─── */
     @media (max-width: 600px) {
       .hero { padding: 40px 20px 50px; }
+      .prework-banner { padding: 14px 20px; }
       .content { padding: 32px 16px 60px; }
       .timeline::before { left: 64px; }
       .time-col { width: 64px; padding-right: 20px; }
@@ -421,304 +241,259 @@
 </head>
 <body>
 
-  <!-- HERO -->
-  <div class="hero">
-    <div class="hero-inner">
-      <div class="logos">
-        <div class="logo-pill pga">PGA TOUR</div>
-        <div class="logo-x">×</div>
-        <div class="logo-pill amp">Amplitude</div>
-      </div>
-      <h1>Onsite <span>Working Session</span></h1>
-      <div class="hero-meta">
-        <div class="meta-item">
-          <div class="meta-icon">📅</div>
-          <span>Tuesday, May 27, 2025</span>
-        </div>
-        <div class="meta-item">
-          <div class="meta-icon">⏰</div>
-          <span>9:30 a.m. – 2:00 p.m. ET</span>
-        </div>
-        <div class="meta-item">
-          <div class="meta-icon">📍</div>
-          <span>PGA TOUR HQ, Ponte Vedra Beach</span>
-        </div>
-      </div>
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="logos">
+      <div class="logo-pill pga">PGA TOUR</div>
+      <div class="logo-x">&times;</div>
+      <div class="logo-pill amp">Amplitude</div>
+    </div>
+    <h1>Onsite <span>Working Session</span></h1>
+    <div class="hero-meta">
+      <div class="meta-item"><div class="meta-icon">&#128197;</div><span>Tuesday, May 27, 2025</span></div>
+      <div class="meta-item"><div class="meta-icon">&#9200;</div><span>9:30 a.m. &ndash; 2:00 p.m. ET</span></div>
+      <div class="meta-item"><div class="meta-icon">&#128205;</div><span>PGA TOUR HQ, Ponte Vedra Beach</span></div>
     </div>
   </div>
-  <div class="hero-divider"></div>
+</div>
+<div class="hero-divider"></div>
 
-  <!-- CONTENT -->
-  <div class="content">
+<!-- PRE-WORK BANNER -->
+<div class="prework-banner">
+  <div class="prework-inner">
+    <div class="prework-icon">&#128203;</div>
+    <div><strong>Pre-work before May 27:</strong> Evan to distribute Adobe fan persona &amp; audience segmentation docs to all attendees. These feed directly into the afternoon cohort workshop. If not shared in advance, we&rsquo;ll do a quick group review at the top of that block.</div>
+  </div>
+</div>
 
-    <div class="section-label">Full Agenda</div>
+<!-- CONTENT -->
+<div class="content">
+  <div class="section-label">Full Agenda</div>
+  <div class="timeline">
 
-    <div class="timeline">
+    <!-- BLOCK 1: Goals + Framework -->
+    <div class="block">
+      <div class="time-col"><div class="time-text">9:30<br/>10:20</div></div>
+      <div class="dot-col"><div class="dot" style="background:#6366f1;box-shadow:0 0 0 2px rgba(99,102,241,0.25)"></div></div>
+      <div class="card-col">
+        <div class="card accent-block1">
+          <div class="card-header">
+            <div class="card-title">Goals, Framework &amp; Template</div>
+            <div class="duration-badge">50 min</div>
+          </div>
 
-      <!-- Goals & KPI Alignment -->
-      <div class="block">
-        <div class="time-col"><div class="time-text">9:30<br/>9:50</div></div>
-        <div class="dot-col"><div class="dot" style="background:#6366f1;box-shadow:0 0 0 2px rgba(99,102,241,0.25);"></div></div>
-        <div class="card-col">
-          <div class="card accent-goals">
-            <div class="card-header">
-              <div class="card-title">Goals & KPI Alignment</div>
-              <div class="duration-badge">20 min</div>
-            </div>
-            <div class="presenter">Led by <a href="mailto:kiley.sheehy@amplitude.com">Kiley Sheehy</a> · Amplitude</div>
+          <div class="sub-section">
+            <div class="sub-title">Goals &amp; KPI Alignment</div>
+            <div class="sub-meta">First 20 min &middot; <a href="mailto:kiley.sheehy@amplitude.com" style="color:var(--amp-blue);text-decoration:none;font-weight:600">Kiley Sheehy</a> &middot; Amplitude</div>
             <div class="bullets">
               <div class="bullet">Quick review of the revised goal sheet</div>
-              <div class="bullet">Map 2026 product initiatives to specific KPIs — frequency, depth, authentication, casual vs core fans</div>
-              <div class="bullet">Align on what success looks like for each KPI and how we'll measure it</div>
+              <div class="bullet">Map 2026 product initiatives to specific KPIs &mdash; frequency, depth, authentication, casual vs. core fans</div>
+              <div class="bullet">Align on what success looks like for each KPI and how we&rsquo;ll measure it</div>
+              <div class="bullet">Brief framing: how Adobe fan persona work connects to Amplitude&rsquo;s segmentation approach</div>
             </div>
           </div>
-        </div>
-      </div>
 
-      <!-- Feature-to-KPI Framework -->
-      <div class="block">
-        <div class="time-col"><div class="time-text">9:50<br/>10:20</div></div>
-        <div class="dot-col"><div class="dot" style="background:#8b5cf6;box-shadow:0 0 0 2px rgba(139,92,246,0.25);"></div></div>
-        <div class="card-col">
-          <div class="card accent-framework">
-            <div class="card-header">
-              <div class="card-title">Feature-to-KPI Framework</div>
-              <div class="duration-badge">30 min</div>
-            </div>
-            <div class="presenter">Led by <a href="mailto:sam.conde@amplitude.com">Sam Conde</a> · Amplitude</div>
+          <div class="sub-section">
+            <div class="sub-title">Feature-to-KPI Framework &amp; Template</div>
+            <div class="sub-meta">Remaining 30 min &middot; <a href="mailto:sam.conde@amplitude.com" style="color:var(--amp-blue);text-decoration:none;font-weight:600">Sam Conde</a> &middot; Amplitude</div>
+            <div class="sub-note">The template IS the framework made tangible &mdash; these live together.</div>
             <div class="bullets">
-              <div class="bullet">How to connect a feature to a KPI in a clear, repeatable way</div>
-              <div class="bullet">What events, cohorts, and funnels are needed to support that framework</div>
-              <div class="bullet">How to measure directional impact for new and existing features</div>
-              <div class="bullet">How Amplitude product analytics complements existing executive and tournament reporting</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Break -->
-      <div class="block is-break">
-        <div class="time-col"><div class="time-text">10:20<br/>10:30</div></div>
-        <div class="dot-col"><div class="dot"></div></div>
-        <div class="card-col">
-          <div class="card accent-break">
-            <div class="card-header">
-              <div class="card-title">☕ Break</div>
-              <div class="duration-badge">10 min</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Section divider -->
-      <div class="block">
-        <div class="time-col"></div>
-        <div class="dot-col"></div>
-        <div class="card-col">
-          <div class="section-divider" style="margin:8px 0 8px;">
-            <div class="section-divider-line"></div>
-            <div class="section-divider-label">Feature Impact Reporting Deep Dive</div>
-            <div class="section-divider-line"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Favorite Player Hub -->
-      <div class="block">
-        <div class="time-col"><div class="time-text">10:30<br/>11:00</div></div>
-        <div class="dot-col"><div class="dot" style="background:var(--amp-blue);box-shadow:0 0 0 2px rgba(22,82,240,0.25);"></div></div>
-        <div class="card-col">
-          <div class="card accent-feature">
-            <div class="card-header">
-              <div class="card-title">Favorite Player Hub — Example Feature Impact Dashboard</div>
-              <div class="duration-badge">30 min</div>
-            </div>
-            <div class="presenter">Led by <a href="mailto:sam.conde@amplitude.com">Sam Conde</a> · Amplitude</div>
-            <div class="bullets">
-              <div class="bullet">Walk-through of a polished feature impact dashboard:
-                <div class="sub-bullets">
-                  <div class="sub-bullet">Exposure trends: users seeing the hub via logo impressions</div>
-                  <div class="sub-bullet">Click-through-rate / engagement: exposed users who click a widget</div>
-                  <div class="sub-bullet">Depth of engagement: widget click → downstream page/app engagement</div>
-                  <div class="sub-bullet">Authentication conversion: interaction → auth gate → sign-in completion</div>
-                  <div class="sub-bullet">Return behavior: exposed vs unexposed users during tournament windows</div>
-                </div>
-              </div>
-              <div class="bullet">How this single feature connects to multiple KPIs: frequency, depth, authentication</div>
-              <div class="bullet">Discussion: how this pattern applies to other features</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Feature-to-KPI Template -->
-      <div class="block">
-        <div class="time-col"><div class="time-text">11:00<br/>11:20</div></div>
-        <div class="dot-col"><div class="dot" style="background:#0ea5e9;box-shadow:0 0 0 2px rgba(14,165,233,0.25);"></div></div>
-        <div class="card-col">
-          <div class="card accent-template">
-            <div class="card-header">
-              <div class="card-title">Feature-to-KPI Funnel & Cohort Template</div>
-              <div class="duration-badge">20 min</div>
-            </div>
-            <div class="presenter">Led by <a href="mailto:sam.conde@amplitude.com">Sam Conde</a> · Amplitude</div>
-            <div class="bullets">
-              <div class="bullet">Deconstruct the example dashboard into a reusable template:
+              <div class="bullet">How to connect any feature to a KPI in a clear, repeatable way</div>
+              <div class="bullet">The building blocks every report needs: exposure event, engagement event(s), downstream KPI proxy, audience segment</div>
+              <div class="bullet">Walk through the reusable template:
                 <div class="sub-bullets">
                   <div class="sub-bullet">Feature exposure cohort</div>
                   <div class="sub-bullet">Engaged-with-feature cohort</div>
                   <div class="sub-bullet">Downstream KPI proxy events</div>
                   <div class="sub-bullet">Exposed vs. not exposed comparison</div>
-                  <div class="sub-bullet">Optional split by casual vs. core fans</div>
+                  <div class="sub-bullet">Audience segmentation (casual vs. core, Adobe persona segments)</div>
                 </div>
               </div>
-              <div class="bullet">Review key chart types: funnel, cohort comparison, trend (before/after), audience segmentation</div>
+              <div class="bullet">Key chart types: funnel, cohort comparison, before/after trend, audience segmentation</div>
             </div>
-            <div class="note-box"><strong>Goal:</strong> Leave behind a template PGA TOUR teams can copy and reuse for every future feature launch.</div>
+            <div class="goal-box"><strong>Goal:</strong> Everyone leaves with the template and knows how to apply it independently after today.</div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Break -->
-      <div class="block is-break">
-        <div class="time-col"><div class="time-text">11:20<br/>11:30</div></div>
-        <div class="dot-col"><div class="dot"></div></div>
-        <div class="card-col">
-          <div class="card accent-break">
-            <div class="card-header">
-              <div class="card-title">☕ Break</div>
-              <div class="duration-badge">10 min</div>
-            </div>
+    <!-- BREAK 1 -->
+    <div class="block">
+      <div class="time-col"><div class="time-text">10:20<br/>10:30</div></div>
+      <div class="dot-col"><div class="dot" style="background:#f3f4f6;box-shadow:0 0 0 2px #d1d5db"></div></div>
+      <div class="card-col">
+        <div class="card accent-break">
+          <div class="card-header">
+            <div class="card-title">&#9749; Break</div>
+            <div class="duration-badge">10 min</div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Live Build -->
-      <div class="block">
-        <div class="time-col"><div class="time-text">11:30<br/>12:00</div></div>
-        <div class="dot-col"><div class="dot" style="background:#10b981;box-shadow:0 0 0 2px rgba(16,185,129,0.25);"></div></div>
-        <div class="card-col">
-          <div class="card accent-live">
-            <div class="card-header">
-              <div class="card-title">⚡ Live Build: Applying the Framework to a Q3 Feature</div>
-              <div class="duration-badge">30 min</div>
-            </div>
-            <div class="presenter">Led by <a href="mailto:sam.conde@amplitude.com">Sam Conde</a> · Amplitude + PGA TOUR Team</div>
-            <div class="bullets">
-              <div class="bullet">Start from the feature-to-KPI template, apply it to an upcoming Q3 feature — candidates include:
-                <div class="sub-bullets">
-                  <div class="sub-bullet">Article deep-link</div>
-                  <div class="sub-bullet">Schedule-page highlight</div>
-                  <div class="sub-bullet">Leaderboard live animation</div>
-                </div>
+    <!-- FAVORITE PLAYER HUB -->
+    <div class="block">
+      <div class="time-col"><div class="time-text">10:30<br/>11:20</div></div>
+      <div class="dot-col"><div class="dot" style="background:#1652f0;box-shadow:0 0 0 2px rgba(22,82,240,0.25)"></div></div>
+      <div class="card-col">
+        <div class="card accent-hub">
+          <div class="card-header">
+            <div class="card-title">Favorite Player Hub &mdash; The Template in Action</div>
+            <div class="duration-badge">50 min</div>
+          </div>
+          <div class="presenter">Led by <a href="mailto:sam.conde@amplitude.com">Sam Conde</a> &middot; Amplitude</div>
+          <div class="sub-note" style="margin-top:12px">This is the template they just learned, fully built out for a real PGA TOUR feature.</div>
+          <div class="bullets">
+            <div class="bullet">Walk-through of a complete Favorite Player Hub feature impact dashboard:
+              <div class="sub-bullets">
+                <div class="sub-bullet">Exposure trends (logo impressions &rarr; hub views)</div>
+                <div class="sub-bullet">Click-through / engagement (exposed users who click a widget)</div>
+                <div class="sub-bullet">Depth of engagement (widget click &rarr; downstream page/app behavior)</div>
+                <div class="sub-bullet">Authentication conversion (interaction &rarr; auth gate &rarr; sign-in completion)</div>
+                <div class="sub-bullet">Return behavior (exposed vs. unexposed users during tournament windows)</div>
               </div>
-              <div class="bullet">Together, define exposure event, engagement event(s), downstream KPI proxy, and audience segmentation</div>
-              <div class="bullet">Build the report or dashboard live in Amplitude — show how quickly feature impact reporting can be stood up</div>
-              <div class="bullet">Identify PGA TOUR team members who will own and reuse this framework going forward</div>
             </div>
-            <div class="note-box"><strong>If time allows:</strong> casual vs. core fan behavior view — entry points, click-through to deeper experiences, return frequency, tournament content interaction.</div>
+            <div class="bullet">Connect each chart back to the template components so the pattern is clear</div>
+            <div class="bullet">How one feature connects to multiple KPIs: frequency, depth, authentication</div>
+            <div class="bullet">Discussion: what would this look like for other PGA TOUR features?</div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Lunch -->
-      <div class="block is-lunch">
-        <div class="time-col"><div class="time-text">12:00<br/>12:45</div></div>
-        <div class="dot-col"><div class="dot" style="background:var(--pga-gold);box-shadow:0 0 0 2px rgba(201,168,76,0.3);"></div></div>
-        <div class="card-col">
-          <div class="card accent-lunch">
-            <div class="card-header">
-              <div class="card-title">🍴⛳ Lunch on Campus</div>
-              <div class="duration-badge">45 min</div>
-            </div>
-            <div class="presenter" style="color:#92400e;">All attendees · PGA TOUR HQ</div>
-            <div class="bullets">
-              <div class="bullet" style="color:#78350f;">Lunch on-site at PGA TOUR HQ</div>
-              <div class="bullet" style="color:#78350f;">Informal discussion and Q&A</div>
-            </div>
+    <!-- BREAK 2 -->
+    <div class="block">
+      <div class="time-col"><div class="time-text">11:20<br/>11:30</div></div>
+      <div class="dot-col"><div class="dot" style="background:#f3f4f6;box-shadow:0 0 0 2px #d1d5db"></div></div>
+      <div class="card-col">
+        <div class="card accent-break">
+          <div class="card-header">
+            <div class="card-title">&#9749; Break</div>
+            <div class="duration-badge">10 min</div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- CDP -->
-      <div class="block">
-        <div class="time-col"><div class="time-text">12:45<br/>1:05</div></div>
-        <div class="dot-col"><div class="dot" style="background:#f59e0b;box-shadow:0 0 0 2px rgba(245,158,11,0.25);"></div></div>
-        <div class="card-col">
-          <div class="card accent-cdp">
-            <div class="card-header">
-              <div class="card-title">Activation Workshop — Customer Data Platform (CDP)</div>
-              <div class="duration-badge">20 min</div>
-            </div>
-            <div class="presenter">Led by <a href="mailto:shessvy.lepekelly@amplitude.com">Shessvy Kelly</a> · Amplitude</div>
-            <div class="bullets">
-              <div class="bullet">State of activation and the CDP at PGA TOUR today — where it's underused</div>
-              <div class="bullet">How to better leverage CDP for fan engagement</div>
-              <div class="bullet">Demo: activating the feature and audience cohorts built earlier in the session</div>
-              <div class="bullet">Hands-on: build a cohort sync or destination together (e.g. casual fans exposed to Favorite Player Hub but not yet authenticated)</div>
-            </div>
+    <!-- LIVE BUILD -->
+    <div class="block">
+      <div class="time-col"><div class="time-text">11:30<br/>12:00</div></div>
+      <div class="dot-col"><div class="dot" style="background:#10b981;box-shadow:0 0 0 2px rgba(16,185,129,0.25)"></div></div>
+      <div class="card-col">
+        <div class="card accent-build">
+          <div class="card-header">
+            <div class="card-title">&#9889; Live Build: Apply the Template to a Q3 Feature</div>
+            <div class="duration-badge">30 min</div>
+          </div>
+          <div class="presenter">Led by <a href="mailto:sam.conde@amplitude.com">Sam Conde</a> &middot; Amplitude + PGA TOUR Team</div>
+          <div class="bullets">
+            <div class="bullet">Choose a Q3 feature together &mdash; candidates: article deep-link, schedule-page highlight, leaderboard live animation</div>
+            <div class="bullet">Define the components as a team: exposure event, engagement event(s), downstream KPI proxy, audience segmentation</div>
+            <div class="bullet">Build it live in Amplitude &mdash; from blank canvas to working dashboard</div>
+            <div class="bullet">Identify who on the PGA TOUR team will own and clone this for future launches</div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- AI Self-Serve -->
-      <div class="block">
-        <div class="time-col"><div class="time-text">1:05<br/>1:35</div></div>
-        <div class="dot-col"><div class="dot" style="background:#ec4899;box-shadow:0 0 0 2px rgba(236,72,153,0.25);"></div></div>
-        <div class="card-col">
-          <div class="card accent-ai">
-            <div class="card-header">
-              <div class="card-title">AI Self-Serve Workflows</div>
-              <div class="duration-badge">30 min</div>
-            </div>
-            <div class="presenter">Led by <a href="mailto:shessvy.lepekelly@amplitude.com">Shessvy Kelly</a> · Amplitude</div>
+    <!-- LUNCH -->
+    <div class="block">
+      <div class="time-col"><div class="time-text">12:00<br/>12:45</div></div>
+      <div class="dot-col"><div class="dot" style="background:#c9a84c;box-shadow:0 0 0 2px rgba(201,168,76,0.3)"></div></div>
+      <div class="card-col">
+        <div class="card accent-lunch">
+          <div class="card-header">
+            <div class="card-title">&#127860;&#9971; Lunch on Campus</div>
+            <div class="duration-badge">45 min</div>
+          </div>
+          <div class="presenter" style="color:#92400e">All attendees &middot; PGA TOUR HQ</div>
+          <div class="bullets">
+            <div class="bullet" style="color:#78350f">Lunch on-site at PGA TOUR HQ</div>
+            <div class="bullet" style="color:#78350f">Informal discussion and Q&amp;A</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ADOBE + AI -->
+    <div class="block">
+      <div class="time-col"><div class="time-text">12:45<br/>1:35</div></div>
+      <div class="dot-col"><div class="dot" style="background:#ec4899;box-shadow:0 0 0 2px rgba(236,72,153,0.25)"></div></div>
+      <div class="card-col">
+        <div class="card accent-adobe">
+          <div class="card-header">
+            <div class="card-title">Adobe Personas + AI Self-Serve</div>
+            <div class="duration-badge">50 min</div>
+          </div>
+
+          <div class="sub-section">
+            <div class="sub-title">Adobe Persona &rarr; Amplitude Cohort Workshop</div>
+            <div class="sub-meta">First 20 min &middot; <a href="mailto:sam.conde@amplitude.com" style="color:var(--amp-blue);text-decoration:none;font-weight:600">Sam Conde</a> &amp; <a href="mailto:kiley.sheehy@amplitude.com" style="color:var(--amp-blue);text-decoration:none;font-weight:600">Kiley Sheehy</a> &middot; Amplitude &nbsp;|&nbsp; Evan &amp; Sean &middot; PGA TOUR</div>
+            <div class="sub-note">Evan and Sean encouraged to join for this block. Quick 5-min doc review at the top if Adobe docs haven&rsquo;t been shared in advance.</div>
             <div class="bullets">
-              <div class="bullet">How to start analysis with natural language questions on key dashboards</div>
+              <div class="bullet">Walk through Adobe&rsquo;s fan persona targets</div>
+              <div class="bullet">For each persona: what behavioral signals in Amplitude define this segment? (events, frequency, content type, entry point, device, etc.)</div>
+              <div class="bullet">Map personas to buildable Amplitude cohort definitions</div>
+              <div class="bullet">Prioritize which 1&ndash;2 personas to instrument first</div>
+              <div class="bullet">CDP close: demo activating a persona cohort downstream (e.g. casual fans exposed to Favorite Player Hub, not yet authenticated) &mdash; full loop from insight &rarr; action</div>
+            </div>
+            <div class="goal-box"><strong>Goal:</strong> Leave with 1&ndash;2 draft cohort definitions ready to build, and a clear owner.</div>
+          </div>
+
+          <div class="sub-section">
+            <div class="sub-title">AI Self-Serve Workflows</div>
+            <div class="sub-meta">Remaining 30 min &middot; <a href="mailto:shessvy.lepekelly@amplitude.com" style="color:var(--amp-blue);text-decoration:none;font-weight:600">Shessvy Kelly</a> &middot; Amplitude</div>
+            <div class="bullets">
+              <div class="bullet">How to start any analysis with a natural language question on a live dashboard</div>
               <div class="bullet">How to baseline a feature (pre/post, exposed vs. not exposed) using AI-assisted workflows</div>
-              <div class="bullet">How to answer feature-performance questions without waiting on custom reporting:
+              <div class="bullet">Hands-on: answer real PGA TOUR questions without waiting on custom reporting:
                 <div class="sub-bullets">
-                  <div class="sub-bullet">"Did this move frequency?"</div>
-                  <div class="sub-bullet">"Did this deepen engagement?"</div>
-                  <div class="sub-bullet">"Did this help casual fans more than core fans?"</div>
+                  <div class="sub-bullet">&ldquo;Did this feature move frequency?&rdquo;</div>
+                  <div class="sub-bullet">&ldquo;Did it deepen engagement for casual fans?&rdquo;</div>
+                  <div class="sub-bullet">&ldquo;How did [Adobe persona] respond vs. the broader audience?&rdquo;</div>
+                  <div class="sub-bullet">&ldquo;Which audience segment drove the most authentication conversions?&rdquo;</div>
                 </div>
               </div>
+              <div class="bullet">How this scales: every team member as their own analyst</div>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Next Steps -->
-      <div class="block">
-        <div class="time-col"><div class="time-text">1:40<br/>2:00</div></div>
-        <div class="dot-col"><div class="dot" style="background:var(--pga-gold);box-shadow:0 0 0 2px rgba(201,168,76,0.3);"></div></div>
-        <div class="card-col">
-          <div class="card accent-next">
-            <div class="card-header">
-              <div class="card-title">Ownership, Next Steps & Collaboration Rhythm</div>
-              <div class="duration-badge">20 min</div>
-            </div>
-            <div class="presenter">Led by <a href="mailto:kiley.sheehy@amplitude.com">Kiley Sheehy</a> · Amplitude</div>
-            <div class="bullets">
-              <div class="bullet">Confirm ownership and responsibilities for:
-                <div class="sub-bullets">
-                  <div class="sub-bullet">Favorite Player Hub feature impact dashboard</div>
-                  <div class="sub-bullet">Feature-to-KPI template for future launches</div>
-                  <div class="sub-bullet">Casual vs. core fan cohorts and audience views</div>
-                </div>
+    <!-- NEXT STEPS -->
+    <div class="block">
+      <div class="time-col"><div class="time-text">1:35<br/>2:00</div></div>
+      <div class="dot-col"><div class="dot" style="background:#c9a84c;box-shadow:0 0 0 2px rgba(201,168,76,0.3)"></div></div>
+      <div class="card-col">
+        <div class="card accent-next">
+          <div class="card-header">
+            <div class="card-title">Ownership, Next Steps &amp; Rhythm</div>
+            <div class="duration-badge">25 min</div>
+          </div>
+          <div class="presenter">Led by <a href="mailto:kiley.sheehy@amplitude.com">Kiley Sheehy</a> &middot; Amplitude</div>
+          <div class="bullets">
+            <div class="bullet">Confirm ownership for:
+              <div class="sub-bullets">
+                <div class="sub-bullet">Favorite Player Hub feature impact dashboard</div>
+                <div class="sub-bullet">Feature-to-KPI template (cloned for future launches)</div>
+                <div class="sub-bullet">Adobe persona &rarr; Amplitude cohort definitions and build-out</div>
               </div>
-              <div class="bullet">Capture action items with names and target dates (PGA TOUR and Amplitude)</div>
-              <div class="bullet">Align on follow-up touchpoints and regular check-in rhythm to review feature impact, activation, and AI usage</div>
             </div>
+            <div class="bullet">Capture action items with names and target dates (PGA TOUR and Amplitude)</div>
+            <div class="bullet">Align on follow-up check-in rhythm to review feature impact, activation, and AI usage</div>
           </div>
         </div>
       </div>
+    </div>
 
-    </div><!-- /timeline -->
-  </div><!-- /content -->
+  </div><!-- /timeline -->
+</div><!-- /content -->
 
-  <div class="footer">
-    <strong>PGA TOUR × Amplitude</strong> &nbsp;·&nbsp; May 27, 2026 &nbsp;·&nbsp; PGA TOUR HQ &nbsp;·&nbsp; 9:30 AM – 2:00 PM ET
-  </div>
+<div class="footer">
+  <strong>PGA TOUR &times; Amplitude</strong> &nbsp;&middot;&nbsp; May 27, 2026 &nbsp;&middot;&nbsp; PGA TOUR HQ &nbsp;&middot;&nbsp; 9:30 AM &ndash; 2:00 PM ET
+</div>
 
 </body>
 </html>
