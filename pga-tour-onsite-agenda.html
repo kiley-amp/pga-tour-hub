@@ -29,7 +29,6 @@
       min-height: 100vh;
     }
 
-    /* HERO */
     .hero {
       background: linear-gradient(135deg, #0d0d1a 0%, #1a1a3e 50%, #0d1a2e 100%);
       color: white;
@@ -83,7 +82,6 @@
     }
     .hero-divider { height: 4px; background: linear-gradient(90deg, var(--pga-gold) 0%, var(--amp-blue) 100%); }
 
-    /* PRE-WORK BANNER */
     .prework-banner {
       background: #fffbeb;
       border-bottom: 1px solid #fde68a;
@@ -99,14 +97,10 @@
       color: #78350f;
       line-height: 1.6;
     }
-    .prework-icon {
-      font-size: 16px;
-      flex-shrink: 0;
-      margin-top: 1px;
-    }
+    .prework-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
     .prework-inner strong { color: #92400e; }
+    .prework-list { display: flex; flex-direction: column; gap: 4px; }
 
-    /* CONTENT */
     .content { max-width: 900px; margin: 0 auto; padding: 48px 24px 80px; }
     .section-label {
       display: inline-flex; align-items: center; gap: 8px;
@@ -115,7 +109,6 @@
     }
     .section-label::after { content: ''; display: block; width: 40px; height: 1px; background: var(--border); }
 
-    /* TIMELINE */
     .timeline { position: relative; display: flex; flex-direction: column; }
     .timeline::before {
       content: '';
@@ -153,13 +146,14 @@
     }
     .card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
 
-    .card.accent-block1  { border-left: 3px solid #6366f1; }
-    .card.accent-hub     { border-left: 3px solid var(--amp-blue); }
-    .card.accent-build   { border-left: 3px solid #10b981; }
-    .card.accent-adobe   { border-left: 3px solid #ec4899; }
-    .card.accent-next    { border-left: 3px solid var(--pga-gold); }
-    .card.accent-break   { border-left: 3px solid #e5e7eb; background: #fafafa; }
-    .card.accent-lunch   { border-left: 3px solid var(--pga-gold); background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); }
+    .card.accent-block1   { border-left: 3px solid #6366f1; }
+    .card.accent-hub      { border-left: 3px solid var(--amp-blue); }
+    .card.accent-build    { border-left: 3px solid #10b981; }
+    .card.accent-personas { border-left: 3px solid #ec4899; }
+    .card.accent-whatsnew { border-left: 3px solid #8b5cf6; }
+    .card.accent-next     { border-left: 3px solid var(--pga-gold); }
+    .card.accent-break    { border-left: 3px solid #e5e7eb; background: #fafafa; }
+    .card.accent-lunch    { border-left: 3px solid var(--pga-gold); background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); }
 
     .card-header {
       display: flex; align-items: flex-start;
@@ -180,12 +174,11 @@
     .presenter a { color: var(--amp-blue); text-decoration: none; font-weight: 600; }
     .presenter a:hover { text-decoration: underline; }
 
-    /* SUB-SECTIONS within a card */
     .sub-section { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--border); }
     .sub-section:first-child { margin-top: 14px; padding-top: 0; border-top: none; }
     .sub-title {
       font-size: 13px; font-weight: 700; color: var(--text);
-      margin-bottom: 4px; display: flex; align-items: center; gap: 8px;
+      margin-bottom: 4px;
     }
     .sub-meta { font-size: 12px; color: var(--text-muted); margin-bottom: 10px; font-style: italic; }
     .sub-note {
@@ -193,7 +186,7 @@
       background: rgba(0,0,0,0.03);
       border: 1px solid var(--border);
       border-radius: 6px; padding: 8px 12px;
-      margin-bottom: 10px; line-height: 1.5;
+      margin-top: 10px; margin-bottom: 10px; line-height: 1.5;
     }
 
     .bullets { margin-top: 12px; display: flex; flex-direction: column; gap: 6px; }
@@ -219,7 +212,6 @@
     }
     .goal-box strong { color: var(--amp-blue); }
 
-    /* FOOTER */
     .footer {
       background: var(--amp-dark);
       color: rgba(255,255,255,0.5);
@@ -241,7 +233,6 @@
 </head>
 <body>
 
-<!-- HERO -->
 <div class="hero">
   <div class="hero-inner">
     <div class="logos">
@@ -259,20 +250,23 @@
 </div>
 <div class="hero-divider"></div>
 
-<!-- PRE-WORK BANNER -->
 <div class="prework-banner">
   <div class="prework-inner">
     <div class="prework-icon">&#128203;</div>
-    <div><strong>Pre-work before May 27:</strong> Evan to distribute Adobe fan persona &amp; audience segmentation docs to all attendees. These feed directly into the afternoon cohort workshop. If not shared in advance, we&rsquo;ll do a quick group review at the top of that block.</div>
+    <div class="prework-list">
+      <div><strong>Pre-work before May 27</strong></div>
+      <div>Evan &mdash; please distribute fan persona &amp; audience segmentation docs to the Amplitude team and Sean ahead of the session. If not shared in advance, we&rsquo;ll do a quick group review at the top of the afternoon block.</div>
+      <div>Matt &mdash; please send the Q3 product roadmap before May 27. This anchors the live build feature selection.</div>
+      <div>Matt &mdash; please send 2&ndash;3 questions for the Favorite Player Hub agent demo. We&rsquo;ll pre-test and have answers ready.</div>
+    </div>
   </div>
 </div>
 
-<!-- CONTENT -->
 <div class="content">
   <div class="section-label">Full Agenda</div>
   <div class="timeline">
 
-    <!-- BLOCK 1: Goals + Framework -->
+    <!-- BLOCK 1 -->
     <div class="block">
       <div class="time-col"><div class="time-text">9:30<br/>10:20</div></div>
       <div class="dot-col"><div class="dot" style="background:#6366f1;box-shadow:0 0 0 2px rgba(99,102,241,0.25)"></div></div>
@@ -288,9 +282,7 @@
             <div class="sub-meta">First 20 min &middot; <a href="mailto:kiley.sheehy@amplitude.com" style="color:var(--amp-blue);text-decoration:none;font-weight:600">Kiley Sheehy</a> &middot; Amplitude</div>
             <div class="bullets">
               <div class="bullet">Quick review of the revised goal sheet</div>
-              <div class="bullet">Map 2026 product initiatives to specific KPIs &mdash; frequency, depth, authentication, casual vs. core fans</div>
-              <div class="bullet">Align on what success looks like for each KPI and how we&rsquo;ll measure it</div>
-              <div class="bullet">Brief framing: how Adobe fan persona work connects to Amplitude&rsquo;s segmentation approach</div>
+              <div class="bullet">Map 2026 product initiatives to the specific KPI targets &mdash; 8% increase in page views per session, 5% retention, 5.5% frequency</div>
             </div>
           </div>
 
@@ -300,14 +292,14 @@
             <div class="sub-note">The template IS the framework made tangible &mdash; these live together.</div>
             <div class="bullets">
               <div class="bullet">How to connect any feature to a KPI in a clear, repeatable way</div>
-              <div class="bullet">The building blocks every report needs: exposure event, engagement event(s), downstream KPI proxy, audience segment</div>
+              <div class="bullet">The building blocks every report needs: exposure event, engagement events, downstream KPI proxy, audience segment</div>
               <div class="bullet">Walk through the reusable template:
                 <div class="sub-bullets">
                   <div class="sub-bullet">Feature exposure cohort</div>
                   <div class="sub-bullet">Engaged-with-feature cohort</div>
                   <div class="sub-bullet">Downstream KPI proxy events</div>
                   <div class="sub-bullet">Exposed vs. not exposed comparison</div>
-                  <div class="sub-bullet">Audience segmentation (casual vs. core, Adobe persona segments)</div>
+                  <div class="sub-bullet">Audience segmentation by casual vs. core fans and fan persona segments</div>
                 </div>
               </div>
               <div class="bullet">Key chart types: funnel, cohort comparison, before/after trend, audience segmentation</div>
@@ -343,19 +335,20 @@
             <div class="duration-badge">50 min</div>
           </div>
           <div class="presenter">Led by <a href="mailto:sam.conde@amplitude.com">Sam Conde</a> &middot; Amplitude</div>
-          <div class="sub-note" style="margin-top:12px">This is the template they just learned, fully built out for a real PGA TOUR feature.</div>
+          <div class="sub-note">Pre-built, pre-tested dashboard &mdash; a guided walk-through of the finished product, not a live build. Agent prompts are pre-tested using questions sourced from Matt in advance.</div>
           <div class="bullets">
             <div class="bullet">Walk-through of a complete Favorite Player Hub feature impact dashboard:
               <div class="sub-bullets">
-                <div class="sub-bullet">Exposure trends (logo impressions &rarr; hub views)</div>
-                <div class="sub-bullet">Click-through / engagement (exposed users who click a widget)</div>
-                <div class="sub-bullet">Depth of engagement (widget click &rarr; downstream page/app behavior)</div>
-                <div class="sub-bullet">Authentication conversion (interaction &rarr; auth gate &rarr; sign-in completion)</div>
-                <div class="sub-bullet">Return behavior (exposed vs. unexposed users during tournament windows)</div>
+                <div class="sub-bullet">Exposure trends &mdash; logo impressions to hub views</div>
+                <div class="sub-bullet">Click-through and engagement &mdash; exposed users who clicked a widget</div>
+                <div class="sub-bullet">Depth of engagement &mdash; widget click to downstream page and app behavior</div>
+                <div class="sub-bullet">Authentication conversion &mdash; interaction to auth gate to sign-in completion</div>
+                <div class="sub-bullet">Return behavior &mdash; exposed vs. unexposed users during tournament windows</div>
               </div>
             </div>
             <div class="bullet">Connect each chart back to the template components so the pattern is clear</div>
             <div class="bullet">How one feature connects to multiple KPIs: frequency, depth, authentication</div>
+            <div class="bullet">Live demo: pre-tested global agent prompts answering real PGA TOUR questions about the feature</div>
             <div class="bullet">Discussion: what would this look like for other PGA TOUR features?</div>
           </div>
         </div>
@@ -387,10 +380,11 @@
             <div class="duration-badge">30 min</div>
           </div>
           <div class="presenter">Led by <a href="mailto:sam.conde@amplitude.com">Sam Conde</a> &middot; Amplitude + PGA TOUR Team</div>
+          <div class="sub-note">Feature to be pre-selected before the onsite &mdash; options sent to the PGA TOUR team in advance for input.</div>
           <div class="bullets">
-            <div class="bullet">Choose a Q3 feature together &mdash; candidates: article deep-link, schedule-page highlight, leaderboard live animation</div>
-            <div class="bullet">Define the components as a team: exposure event, engagement event(s), downstream KPI proxy, audience segmentation</div>
-            <div class="bullet">Build it live in Amplitude &mdash; from blank canvas to working dashboard</div>
+            <div class="bullet">Hands-on: apply the framework to the pre-selected Q3 feature from a blank canvas</div>
+            <div class="bullet">Define the components together: exposure event, engagement events, downstream KPI proxy, audience segmentation</div>
+            <div class="bullet">Build it live in Amplitude &mdash; show how quickly a feature impact dashboard can be stood up</div>
             <div class="bullet">Identify who on the PGA TOUR team will own and clone this for future launches</div>
           </div>
         </div>
@@ -416,47 +410,61 @@
       </div>
     </div>
 
-    <!-- ADOBE + AI -->
+    <!-- PERSONAS + CDP -->
     <div class="block">
-      <div class="time-col"><div class="time-text">12:45<br/>1:35</div></div>
+      <div class="time-col"><div class="time-text">12:45<br/>1:20</div></div>
       <div class="dot-col"><div class="dot" style="background:#ec4899;box-shadow:0 0 0 2px rgba(236,72,153,0.25)"></div></div>
       <div class="card-col">
-        <div class="card accent-adobe">
+        <div class="card accent-personas">
           <div class="card-header">
-            <div class="card-title">Adobe Personas + AI Self-Serve</div>
-            <div class="duration-badge">50 min</div>
+            <div class="card-title">Personas + CDP Deep Dive</div>
+            <div class="duration-badge">35 min</div>
           </div>
-
-          <div class="sub-section">
-            <div class="sub-title">Adobe Persona &rarr; Amplitude Cohort Workshop</div>
-            <div class="sub-meta">First 20 min &middot; <a href="mailto:sam.conde@amplitude.com" style="color:var(--amp-blue);text-decoration:none;font-weight:600">Sam Conde</a> &amp; <a href="mailto:kiley.sheehy@amplitude.com" style="color:var(--amp-blue);text-decoration:none;font-weight:600">Kiley Sheehy</a> &middot; Amplitude &nbsp;|&nbsp; Evan &amp; Sean &middot; PGA TOUR</div>
-            <div class="sub-note">Evan and Sean encouraged to join for this block. Quick 5-min doc review at the top if Adobe docs haven&rsquo;t been shared in advance.</div>
-            <div class="bullets">
-              <div class="bullet">Walk through Adobe&rsquo;s fan persona targets</div>
-              <div class="bullet">For each persona: what behavioral signals in Amplitude define this segment? (events, frequency, content type, entry point, device, etc.)</div>
-              <div class="bullet">Map personas to buildable Amplitude cohort definitions</div>
-              <div class="bullet">Prioritize which 1&ndash;2 personas to instrument first</div>
-              <div class="bullet">CDP close: demo activating a persona cohort downstream (e.g. casual fans exposed to Favorite Player Hub, not yet authenticated) &mdash; full loop from insight &rarr; action</div>
-            </div>
-            <div class="goal-box"><strong>Goal:</strong> Leave with 1&ndash;2 draft cohort definitions ready to build, and a clear owner.</div>
+          <div class="presenter"><a href="mailto:sam.conde@amplitude.com">Sam Conde</a> &amp; <a href="mailto:kiley.sheehy@amplitude.com">Kiley Sheehy</a> &middot; Amplitude &nbsp;|&nbsp; Evan &amp; Sean &middot; PGA TOUR</div>
+          <div class="sub-note">Priority block of the afternoon. Quick 5-min doc review at the top if persona docs haven&rsquo;t been shared in advance.</div>
+          <div class="bullets">
+            <div class="bullet">Walk through the fan persona targets &mdash; using Evan&rsquo;s material, with fallback content if not yet available</div>
+            <div class="bullet">For each persona: what behavioral signals in Amplitude define this segment &mdash; events, frequency, content type, entry point, device, and more</div>
+            <div class="bullet">Map personas to buildable Amplitude cohort definitions</div>
+            <div class="bullet">Prioritize which 1&ndash;2 personas to instrument first</div>
+            <div class="bullet">CDP close: demo activating a persona cohort downstream &mdash; full loop from insight to action</div>
           </div>
+          <div class="goal-box"><strong>Goal:</strong> Leave with 1&ndash;2 draft cohort definitions ready to build in Amplitude, and a clear owner for each.</div>
+        </div>
+      </div>
+    </div>
 
-          <div class="sub-section">
-            <div class="sub-title">AI Self-Serve Workflows</div>
-            <div class="sub-meta">Remaining 30 min &middot; <a href="mailto:shessvy.lepekelly@amplitude.com" style="color:var(--amp-blue);text-decoration:none;font-weight:600">Shessvy Kelly</a> &middot; Amplitude</div>
-            <div class="bullets">
-              <div class="bullet">How to start any analysis with a natural language question on a live dashboard</div>
-              <div class="bullet">How to baseline a feature (pre/post, exposed vs. not exposed) using AI-assisted workflows</div>
-              <div class="bullet">Hands-on: answer real PGA TOUR questions without waiting on custom reporting:
-                <div class="sub-bullets">
-                  <div class="sub-bullet">&ldquo;Did this feature move frequency?&rdquo;</div>
-                  <div class="sub-bullet">&ldquo;Did it deepen engagement for casual fans?&rdquo;</div>
-                  <div class="sub-bullet">&ldquo;How did [Adobe persona] respond vs. the broader audience?&rdquo;</div>
-                  <div class="sub-bullet">&ldquo;Which audience segment drove the most authentication conversions?&rdquo;</div>
-                </div>
-              </div>
-              <div class="bullet">How this scales: every team member as their own analyst</div>
-            </div>
+    <!-- BREAK 3 -->
+    <div class="block">
+      <div class="time-col"><div class="time-text">1:20<br/>1:30</div></div>
+      <div class="dot-col"><div class="dot" style="background:#f3f4f6;box-shadow:0 0 0 2px #d1d5db"></div></div>
+      <div class="card-col">
+        <div class="card accent-break">
+          <div class="card-header">
+            <div class="card-title">&#9749; Break</div>
+            <div class="duration-badge">10 min</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHAT'S NEW -->
+    <div class="block">
+      <div class="time-col"><div class="time-text">1:30<br/>1:45</div></div>
+      <div class="dot-col"><div class="dot" style="background:#8b5cf6;box-shadow:0 0 0 2px rgba(139,92,246,0.25)"></div></div>
+      <div class="card-col">
+        <div class="card accent-whatsnew">
+          <div class="card-header">
+            <div class="card-title">&#10024; What&rsquo;s New: AI &amp; Product Updates</div>
+            <div class="duration-badge">15 min</div>
+          </div>
+          <div class="presenter">Led by <a href="mailto:sam.conde@amplitude.com">Sam Conde</a> &middot; Amplitude</div>
+          <div class="bullets">
+            <div class="bullet"><strong>AI Feedback</strong> &mdash; surface qualitative signals alongside quantitative data</div>
+            <div class="bullet"><strong>Visibility 2.0</strong> &mdash; updated dashboards and competitive visibility features</div>
+            <div class="bullet"><strong>Dashboard Agent / Agent Analytics</strong> &mdash; conversational analysis directly on your dashboards</div>
+            <div class="bullet"><strong>Journey Orchestration</strong> &mdash; where Activation fits into the fan engagement lifecycle</div>
+            <div class="bullet"><strong>Roadmap</strong> &mdash; what&rsquo;s coming next and how to stay ahead of it</div>
           </div>
         </div>
       </div>
@@ -464,32 +472,39 @@
 
     <!-- NEXT STEPS -->
     <div class="block">
-      <div class="time-col"><div class="time-text">1:35<br/>2:00</div></div>
+      <div class="time-col"><div class="time-text">1:45<br/>2:00</div></div>
       <div class="dot-col"><div class="dot" style="background:#c9a84c;box-shadow:0 0 0 2px rgba(201,168,76,0.3)"></div></div>
       <div class="card-col">
         <div class="card accent-next">
           <div class="card-header">
             <div class="card-title">Ownership, Next Steps &amp; Rhythm</div>
-            <div class="duration-badge">25 min</div>
+            <div class="duration-badge">15 min</div>
           </div>
           <div class="presenter">Led by <a href="mailto:kiley.sheehy@amplitude.com">Kiley Sheehy</a> &middot; Amplitude</div>
           <div class="bullets">
             <div class="bullet">Confirm ownership for:
               <div class="sub-bullets">
                 <div class="sub-bullet">Favorite Player Hub feature impact dashboard</div>
-                <div class="sub-bullet">Feature-to-KPI template (cloned for future launches)</div>
-                <div class="sub-bullet">Adobe persona &rarr; Amplitude cohort definitions and build-out</div>
+                <div class="sub-bullet">Feature-to-KPI template &mdash; cloned for future launches</div>
+                <div class="sub-bullet">Persona &rarr; Amplitude cohort definitions and build-out</div>
               </div>
             </div>
-            <div class="bullet">Capture action items with names and target dates (PGA TOUR and Amplitude)</div>
-            <div class="bullet">Align on follow-up check-in rhythm to review feature impact, activation, and AI usage</div>
+            <div class="bullet">Capture action items with names and target dates for both PGA TOUR and Amplitude</div>
+            <div class="bullet">Propose a recurring sprint-aligned check-in &mdash; monthly or biweekly:
+              <div class="sub-bullets">
+                <div class="sub-bullet">Review features, tests, and new product and marketing work rolling out in upcoming sprints</div>
+                <div class="sub-bullet">Determine baselines and define success for each</div>
+                <div class="sub-bullet">Map to KPIs</div>
+                <div class="sub-bullet">Build measurement in Amplitude</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-  </div><!-- /timeline -->
-</div><!-- /content -->
+  </div>
+</div>
 
 <div class="footer">
   <strong>PGA TOUR &times; Amplitude</strong> &nbsp;&middot;&nbsp; May 27, 2026 &nbsp;&middot;&nbsp; PGA TOUR HQ &nbsp;&middot;&nbsp; 9:30 AM &ndash; 2:00 PM ET
